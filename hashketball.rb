@@ -1,3 +1,5 @@
+require 'pry'
+
 def game_hash
   {
     home: {
@@ -115,4 +117,24 @@ def game_hash
       ]
     }
   }
+end
+
+def players
+  game_hash[:home][:players] + game_hash[:away][:players]
+end
+
+def find_player_by_name(player_name)
+  players.find do |player_hash|
+    player_hash[:player_name] == player_name
+  end
+end
+
+
+def num_points_scored(player_name)
+  # check which team the player has
+  find_player_by_name(player_name)[:points]
+end
+
+def shoe_size(player_name)
+  find_player_by_name(player_name)[:shoe]
 end
