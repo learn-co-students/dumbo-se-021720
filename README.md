@@ -10,7 +10,7 @@ By the end of this lecture you will be able to:
 * Know what DRY means
 * Use .class to identify data types
 * Use .keys and .values
-* Use map, select, find and each
+* Use map, select and find
 
 
 ## How to lecture
@@ -21,6 +21,24 @@ By the end of this lecture you will be able to:
 * Should I code along?
 * Falling asleep
 * Question-asking hours
+
+## How this lecture will be structured:
+
+1. Warmup
+  * Data types
+  * How to google
+  * Read errors and use them to solve bugs
+  
+2. Try it yourself
+  * You will be given a task to work on (8-10 minutes)
+  <p align='center'>
+    ----------- BREAK -----------
+  </p>
+
+3. Hashketball Time
+  * Use all the tools we learned in the first two steps
+  * Make it work
+  * Make it DRY
 
 
 Resources:
