@@ -131,7 +131,6 @@ end
 
 
 def num_points_scored(player_name)
-  # check which team the player has
   find_player_by_name(player_name)[:points]
 end
 
