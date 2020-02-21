@@ -7,7 +7,7 @@ class Tweet
   def initialize(user, message)
     @user = user
     @message = message
-    binding.pry
+    # binding.pry
     @@all << self
     # binding.pry
   end
