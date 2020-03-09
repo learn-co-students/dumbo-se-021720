@@ -1,0 +1,11 @@
+<h1>I AM THE PAGE WITH ALL THE NOUNS ON IT</h1>
+
+<ol>
+  <% @nouns.each do |noun| %>
+    <li>
+      <a href="http://greatjonesgoods.com">
+        <%= noun.name %>
+      </a>
+    </li>
+  <% end %>
+<ol>
