@@ -1,0 +1,20 @@
+<h1>I AM THE PAGE WITH ALL THE NOUNS ON IT</h1>
+
+<form action="/nouns" method="GET">
+<!--   <select>
+    <option>Name</option>
+    <option>Description</option>
+  </select> -->
+  <input type="text" name="q" />
+  <input type="submit" value="search" />
+</form>
+
+<ol>
+  <% @nouns.each do |noun| %>
+    <li>
+      <a href="/nouns/<%= noun.id %>">
+        <%= noun.name %>
+      </a>
+    </li>
+  <% end %>
+<ol>
