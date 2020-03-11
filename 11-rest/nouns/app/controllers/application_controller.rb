@@ -5,10 +5,12 @@ class ApplicationController < Sinatra::Base
   configure do
     set :public_folder, 'public'
     set :views, 'app/views'
+    set :method_override, true
   end
 
   get "/" do
-    erb :welcome
+    redirect to "/nouns"
+    # erb :welcome
   end
 
   get "/nouns" do #index
@@ -16,7 +18,9 @@ class ApplicationController < Sinatra::Base
     erb :index
   end
 
+  #new
   get "/nouns/new" do
+    @noun = Noun.new
     erb :new
   end
 
@@ -25,33 +29,26 @@ class ApplicationController < Sinatra::Base
     erb :show
   end
 
-  # get '/nouns/2' do
-  #   @noun = Noun.find(2)
-  #   erb :show
-  # end
-
-  # get '/nouns/3' do
-  #   @noun = Noun.find(3)
-  #   erb :show
-  # end
-
-  # get '/nouns/4' do
-  #   @noun = Noun.find(4)
-  #   erb :show
-  # end
 
   # create
   post "/nouns" do
-    binding.pry
-    noun = Noun.create(params)
+    noun = Noun.create(params[:noun])
     redirect to "/nouns/#{ noun.id }"
   end
 
+  #edit
+  get '/nouns/:id/edit' do
+    @noun = Noun.find(params[:id])
+    erb :edit
+  end
 
   # update
-  put "/nouns/:id" do
-    noun = Noun.find(8)
-    noun.update(name: "Castle", definition: "A big cold home", usefulness: 2)
+  patch "/nouns/:id" do
+    noun = Noun.find(params[:id])
+    # params.delete("_method")
+    # binding.pry
+    noun.update(params[:noun])
+    redirect to "/nouns/#{ noun.id }"
   end
 
 
@@ -60,7 +57,8 @@ class ApplicationController < Sinatra::Base
     # noun = Noun.find(12)
     # noun.destroy
 
-    Noun.destroy(12)
+    Noun.destroy(params[:id])
+    redirect to "/nouns"
   end
 
 end

@@ -1,0 +1,17 @@
+<ul>
+  <li>
+    <label for="name">Name</label>
+    <input type="text" id="name" name="noun[name]" value="<%= @noun.name %>">
+  </li>
+  <li>
+    <label for="definition">Definition</label>
+    <textarea id="definition" name="noun[definition]"><%= @noun.definition %></textarea>
+  </li>
+  <li>
+    <label for="usefulness">Usefulness</label>
+    <input type="number" id="usefulness" name="noun[usefulness]" value="<%= @noun.usefulness %>">
+  </li>
+</ul>
+<!-- <input type="text" name="ryan[seit]" value="" /> -->
+<!-- <input type="text" name="john[schimansky]" value="" /> -->
+<input type="submit" />
