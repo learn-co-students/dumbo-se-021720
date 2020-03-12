@@ -1,0 +1,13 @@
+<h1>I AM THE PAGE WITH ALL THE purchases ON IT</h1>
+
+<ol>
+  <% @purchases.each do |purchase| %>
+    <li>
+      <a href="/purchases/<%= purchase.id %>">
+        <%= purchase.buyer_name %>
+        &mdash;
+        <%= purchase.delivery_date %>
+      </a>
+    </li>
+  <% end %>
+<ol>
