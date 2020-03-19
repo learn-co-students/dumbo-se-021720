@@ -1,0 +1,12 @@
+<h1><%= @customer.name %></h1>
+<%= @customer.address %>
+<%= @customer.city %>
+<%= @customer.state %>
+<%= @customer.zip %>
+<ul>
+  <% @customer.meal_types.each do |meal_type| %>
+    <li>
+      <%= meal_type.name %>
+    </li>
+  <% end %>
+</ul>

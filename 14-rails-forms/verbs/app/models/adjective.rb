@@ -1,0 +1,2 @@
+class Adjective < ApplicationRecord
+end

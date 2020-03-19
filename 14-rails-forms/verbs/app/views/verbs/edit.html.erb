@@ -1,0 +1,50 @@
+<!-- <form method="POST" action="/verbs/<%= @verb.id %>">
+  <input type="hidden" name="_method" value="PATCH" />
+  <ul>
+    <li>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" value="<%= @verb.name %>" />
+    </li>
+    <li>
+      <label for="conjugations">Conjugations</label>
+      <input type="number" id="conjugations" name="conjugations" value="<%= @verb.conjugations %>" />
+    </li>
+    <input type="submit" />
+  </ul>
+</form>
+ -->
+
+<%= form_for @verb do |f| %>
+  <ul>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :conjugations %>
+      <%= f.number_field :conjugations %>
+    </li>
+  </ul>
+  <%= f.submit %>
+<% end %>
+<!-- 
+<%= form_for Verb.new do |f| %>
+
+<% end %>
+ -->
+<!-- 
+<%= form_tag verb_path(@verb), method: :patch do %>
+  <ul>
+    <li>
+      <%= label_tag :name %>
+      <%= text_field_tag :name, @verb.name %>
+    </li>
+    <li> 
+      <%= label_tag :conjugations %>
+      <%= number_field_tag :conjugations, @verb.conjugations %>
+    </li>
+  </ul>
+  <%= submit_tag "Update Verb" %>
+<% end %> -->
+
+<%# form_with %>
