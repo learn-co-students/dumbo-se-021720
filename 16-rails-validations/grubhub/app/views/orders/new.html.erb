@@ -1,0 +1,20 @@
+
+
+<%= form_for @order do |f| %>
+  <ul>
+    <li>
+      <%= f.label :customer_id %>
+      <%= f.collection_select :customer_id, @customers, :id, :name %>
+    </li>
+    <li>
+      <%= f.label :meal_type_id %>
+      <%= f.collection_select :meal_type_id, @meal_types, :id, :name, prompt: "SELECT ONE DAMMIT" %>
+      <!-- <select name="order[meal_type_id]">
+        <option value="1">Burrito</option>
+        <option value="2">Pizza</option>
+        <option value="3">Pho</option>
+      </select> -->
+    </li>
+  </ul>
+  <%= f.submit %>
+<% end %>

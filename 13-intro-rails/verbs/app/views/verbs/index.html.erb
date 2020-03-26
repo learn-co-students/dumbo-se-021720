@@ -1,0 +1,11 @@
+<h1>All Verbs</h1>
+<ul>
+<% @verbs.each do |verb| %>
+  <li>
+  <!--   <a href="<%= verb_path(verb) %>">
+      <%= verb.name %>  
+    </a> -->
+    <%= link_to verb.name, verb, class: "potato" %>
+  </li>
+<% end %>
+</ul>

@@ -1,0 +1,35 @@
+<% if @customer.errors.any? %>
+  <ul>
+  <% @customer.errors.full_messages.each do |error| %>
+    <li>
+      <%= error %>
+    </li>
+  <% end %>
+  </ul>
+<% end %>
+
+<%= form_for @customer do |f| %>
+  <ul>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :address %>
+      <%= f.text_field :address %>
+    </li>
+    <li>
+      <%= f.label :city %>
+      <%= f.text_field :city %>
+    </li>
+    <li>
+      <%= f.label :state %>
+      <%= f.text_field :state %>
+    </li>
+    <li>
+      <%= f.label :zip %>
+      <%= f.text_field :zip %>
+    </li>
+    <%= f.submit %>
+  </ul>
+<% end %>

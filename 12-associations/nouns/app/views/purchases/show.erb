@@ -1,0 +1,10 @@
+<h1><%= @purchase.buyer_name %> <%= @purchase.delivery_date %></h1>
+
+<ul>
+  <% @purchase.receipt_items.each do |ri| %>
+    <li>
+      <%= ri.quantity %> 
+      <%= ri.noun.name.pluralize(ri.quantity) %>
+    </li>
+  <% end %>
+</ul>

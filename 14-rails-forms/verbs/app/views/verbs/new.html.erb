@@ -1,0 +1,23 @@
+<h1>New Verb</h1>
+
+<%#= form_tag "/verbs", method: :delete do %>
+
+<%# end %>
+
+<%#= form_with url: "/verbs", method: :delete do |f| %>
+
+<%# end %>
+
+<%= form_with model: @verb, local: true do |f| %>
+  <ul>
+    <li>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </li>
+    <li>
+      <%= f.label :conjugations %>
+      <%= f.number_field :conjugations %>
+    </li>
+  </ul>
+  <%= f.submit %>
+<% end %>

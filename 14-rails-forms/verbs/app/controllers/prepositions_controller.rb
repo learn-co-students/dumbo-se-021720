@@ -1,0 +1,2 @@
+class PrepositionsController < ApplicationController
+end

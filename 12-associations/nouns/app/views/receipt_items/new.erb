@@ -1,0 +1,28 @@
+<h1>Add item to purchase</h1>
+
+<form method="POST" action="/receipt_items">
+  <ul>
+    <li>
+      <label for="quantity">Quantity</label>
+      <input type="number" id="quantity" name="quantity" />
+    </li>
+    <li>
+      <label for="noun_id">Noun</label>
+      <!-- <input type="number" id="noun_id" name="noun_id" /> -->
+      <select name="noun_id">
+        <% @nouns.each do |noun| %>
+          <option value="<%= noun.id %>">
+            <%= noun.name %>
+          </option>
+        <% end %>
+<%#    <option value="6">Banana</option>
+        <option value="7">Graphite</option> %>
+      </select>
+    </li>
+    <li>
+      <label for="purchase_id">Purchase</label>
+      <input type="number" id="purchase_id" name="purchase_id" />
+    </li>
+  </ul>
+  <input type="submit" />
+</form>

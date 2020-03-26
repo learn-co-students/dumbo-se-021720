@@ -1,0 +1,35 @@
+<h1>Edit Noun</h1>
+<form action="/nouns/<%= @noun.id %>" method="POST">
+  <input type="hidden" name="_method" value="PATCH" />
+  <%= erb :"nouns/_form" %>
+</form>
+
+
+
+<!-- <form method="POST" action="/nouns">
+  <ul>
+    <li>New Name
+      <input type="text" name="name" />
+    </li>
+    <li>New Definition
+      <input type="text" name="definiton" />
+    </li>
+    <li>New Usefullnes 
+      <input type="number" name="usefulness" />
+    </li>
+  </ul>
+  <input type="submit" />
+  <input id="hidden" type="hidden" name="_method" value="PATCH" />
+</form>
+
+
+<h2> Edit your Noun </h2>
+<form action="/noun/<%=@noun.id%>" method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+  <input type="text" name="noun[name]" value="<%= @noun.name %>">
+    <input type="submit" value="Edit Noun" />
+</form>
+
+ -->
+
+
