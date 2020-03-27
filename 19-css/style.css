@@ -1,0 +1,24 @@
+.dog-container > li,
+.dog-container > li#dog-lick-baby {
+  border: 5px inset red;
+  background: pink;
+  margin: 10px;
+  padding: 50px;
+}
+.dog-container {
+  display: flex; 
+  flex-wrap: wrap;
+}
+li {
+  /*opacity: 0.25;*/
+  background: green;
+}
+#dog-lick-baby {
+  background: skyblue;
+}
+.dog-container > li#dog-lick-baby {
+  background: pink;
+}
+.dog-container img {
+  width: 200px;
+}
