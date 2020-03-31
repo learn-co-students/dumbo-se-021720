@@ -13,6 +13,13 @@
 - Handling Events
 - Communicating with the Server
 
+## App Ideas
+- Dog - name, image, breed, age, fixed
+
+You job:
+- take our index.html file
+- and draw it out as a tree
+
 ### The Document Object Model Overview
 - What is the DOM?
   - The DOM (Document Object Model) is a representation of an HTML document as a **tree** (more on this later) that can be manipulated with JavaScript
