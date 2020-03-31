@@ -5,6 +5,10 @@ header {
   height: 40px;
 }
 
+#sign-up {
+  background-color: purple;
+}
+
 aside {
   position: fixed;
   top: 40px;
