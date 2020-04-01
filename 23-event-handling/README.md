@@ -7,6 +7,7 @@
 - [ ] Combine knowledge of DOM manipulation and events to allow user interaction to change DOM
 
 ## Outline
+- Finish DOM rendering
 - Discuss browser events
 - Manipulate Wikipedia using browser events
   - on clicking the header, change the color to red
