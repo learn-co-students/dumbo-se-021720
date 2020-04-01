@@ -1,24 +1,8 @@
 # Introduction to JavaScript
 
-## Lecture Expectations
-- Participation
-  - Don't wait for someone else to give the answer
-    - Make a hypothesis (even if you don't plan on sharing it)
-  - Don't be afraid to give the wrong answer
-- Labs/Pacing
-- Lecture Code: clone the class repo!
-- Breaks
-- Question-asking hours
-- Should I code along?
-
-## Mod 3 Overview
-- Week 1: JS Fundamentals and 'three pillars' of JS (DOM Manipulation, Event Handling, Network Requests)
-- Week 2: Rails API and OOJS
-- Week 3: Project Week and Modern JS
-
 ---
 
-## SWBATs
+## Students Will Be Able To s
 
 - [ ] Briefly explain the history of JS
 - [ ] Understand the role of JS in web development
@@ -74,7 +58,7 @@
 ### JavaScript Data Types Overview
 There are seven primitive data types in JavaScript:
   1. Symbol
-  2. Undefined
+  2. Undefined -> variable has been declared but not assigned a value; or a function doesn't have an explicit return
   3. Null
   4. Boolean
   5. Number
