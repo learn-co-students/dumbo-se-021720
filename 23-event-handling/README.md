@@ -21,12 +21,11 @@
 
 ### What are some common things users do on a webpage?
 
+
 [All the Events](https://developer.mozilla.org/en-US/docs/Web/Events)
 
 ### What are the steps for creating interaction with the DOM?
-1. What element are we listening for events
-2. What kind of event are we listening for
-3. What do we want to happen (what function do we want to run)
+
 
 ## What are Web Events 🤔
 
