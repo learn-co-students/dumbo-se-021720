@@ -10,6 +10,13 @@
 
 ## Notes
 
+## Outline
+- Discuss arrow function syntax
+- Review our app
+- Add Update + Delete functionality using nested event listeners (closure)
+- Discuss Event Propogation
+- Refactor Update + Delete functionality using event delegation
+
 ### Event Propagation
 - Bubbling!
 - When you trigger an event on a child, the event will bubble up to all ancestor elements and trigger event handlers of the same type on all ancestors (e.g. clicking on a child activates child's event click handler AS WELL as parent's click handler)
