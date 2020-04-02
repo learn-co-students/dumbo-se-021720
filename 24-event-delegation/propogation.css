@@ -1,0 +1,19 @@
+/* bubbling demo */
+.bubbling {
+  border: 4px solid salmon;
+  background: orange !important;
+  position: relative;
+  transition: all 0.2s;
+}
+
+.bubbling::after {
+  content: ""; 
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: orange;
+  opacity: .7;
+  z-index: 100;
+}
