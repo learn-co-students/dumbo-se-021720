@@ -8,6 +8,58 @@
 - [ ] Synthesize knowledge of DOM manipulation with asynchronous javascript
 - [ ] **BONUS** Use `catch` to handle errors in promises
 
+## API Documentation
+
+Get all dogs:
+``` 
+Route: GET /dogs 
+```
+
+Get one dog:
+``` 
+Route: GET /dogs/:id
+```
+
+Create dog:
+``` 
+Route: POST /dogs
+
+Required Keys In Header: {
+  "Content-Type": "application/json",
+  "Accept": "application/json",
+}
+
+Required Keys In Body: {
+  "name": string,
+  "age": integer,
+  "bio": string,
+  "profile_pic": string,
+  "match": boolean
+}
+```
+
+Update dog:
+``` 
+Route: PATCH /dogs/:id
+
+Required Keys In Header: {
+  "Content-Type": "application/json",
+  "Accept": "application/json",
+}
+
+Optional Keys In Body: {
+  "name": string,
+  "age": integer,
+  "bio": string,
+  "profile_pic": string,
+  "match": boolean
+}
+```
+
+Delete dog:
+``` 
+Route: DELETE /dogs/:id
+```
 
 ## What Does Synchronous/ Asynchronous Mean 🕰
 
