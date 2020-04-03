@@ -15,11 +15,46 @@ cardsUl.addEventListener("click", e => {
     } else {
       matchSpan.textContent = "🐾"
     }
+
+    // RESTful routing
+    // PATCH /dogs/:id
+    const dogId = e.target.dataset.id
+    const match = matchSpan.textContent === "🐾"
+    // console.log(dogId, match)
+    fetch(`http://localhost:3000/dogs/${dogId}`, {
+      method: "PATCH",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ match: match })
+    })
+
   }
   // Delete Dog
   if (e.target.dataset.action === "left") {
+
+    // RESTful route for deleting a dog
+    // Verb: DELETE
+    // Path: /dogs/:id
+    const dogId = e.target.dataset.id
+
+    // sending a request
+    fetch(`http://localhost:3000/dogs/${dogId}`, {
+      method: "DELETE"
+    })
+    // .then(response => {
+    //   // pessimistic rendering
+    //   // response
+    //   if (response.ok) {
+    //     const cardLi = e.target.closest(".card")
+    //     cardLi.remove()
+    //   }
+    // })
+
+    // optimistic rendering
     const cardLi = e.target.closest(".card")
     cardLi.remove()
+
   }
 })
 
@@ -37,11 +72,26 @@ newDogForm.addEventListener("submit", function (e) {
     name: e.target.name.value,
     profile_pic: e.target.profile_pic.value,
     age: e.target.age.value,
-    bio: e.target.bio.value
+    bio: e.target.bio.value,
+    match: false
   }
 
-  // 2. render a new dog on the page
-  renderDog(newDog)
+  // RESTful routing
+  // POST /dogs
+  fetch("http://localhost:3000/dogs", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newDog)
+  })
+    .then(response => response.json())
+    .then(actualNewDog => {
+      console.log(actualNewDog)
+      // 2. render a new dog on the page
+      renderDog(actualNewDog)
+    })
+
 })
 
 /************* Render Helpers *************/
@@ -71,8 +121,18 @@ function renderDog(dogObj) {
   cardsUl.append(cardLi)
 }
 
+
 /************* Initial Render *************/
 // Read Dogs
-dogs.forEach(function (dog) {
-  renderDog(dog)
-})
+fetch("http://localhost:3000/dogs")
+  .then(response => response.json())
+  .then(dogsArray => {
+    // console.log(data)
+    dogsArray.forEach(function (dog) {
+      renderDog(dog)
+    })
+  })
+
+// When X event happens
+// Do Y fetch request
+// And slap Z on/off the DOM
