@@ -6,6 +6,7 @@ const cardsUl = document.getElementById('cards')
 /************* Event Listeners *************/
 // Event Delegation
 cardsUl.addEventListener("click", e => {
+  // Update Dog
   if (e.target.dataset.action === "right") {
     const cardLi = e.target.closest(".card")
     const matchSpan = cardLi.querySelector(".match")
@@ -15,17 +16,19 @@ cardsUl.addEventListener("click", e => {
       matchSpan.textContent = "🐾"
     }
   }
+  // Delete Dog
   if (e.target.dataset.action === "left") {
     const cardLi = e.target.closest(".card")
     cardLi.remove()
   }
 })
 
-
+// Toggle Dark Mode
 toggleCheckbox.addEventListener("click", function (e) {
   document.body.classList.toggle("dark-mode")
 })
 
+// Create Dog
 newDogForm.addEventListener("submit", function (e) {
   e.preventDefault() // 0. always use this for submit events!
 
@@ -60,7 +63,7 @@ function renderDog(dogObj) {
       <p class="bio">${dogObj.bio}</p>
     </div>
     <div class="buttons">
-      <button data-action="left" class="swipe left">💩</button>
+      <button data-action="left" data-id="${dogObj.id}" class="swipe left">💩</button>
       <button data-action="right" data-id="${dogObj.id}" class="swipe right">🐾</button>
     </div>
   `
@@ -69,6 +72,7 @@ function renderDog(dogObj) {
 }
 
 /************* Initial Render *************/
+// Read Dogs
 dogs.forEach(function (dog) {
   renderDog(dog)
 })

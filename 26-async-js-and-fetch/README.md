@@ -8,10 +8,6 @@
 - [ ] Synthesize knowledge of DOM manipulation with asynchronous javascript
 - [ ] **BONUS** Use `catch` to handle errors in promises
 
-## Notes
-- AJAX:
-- JSON:
-- `json-server`:
 
 ## What Does Synchronous/ Asynchronous Mean 🕰
 
