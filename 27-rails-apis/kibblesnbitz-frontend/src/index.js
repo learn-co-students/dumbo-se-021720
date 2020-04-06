@@ -8,35 +8,29 @@ const cardsUl = document.getElementById('cards')
 cardsUl.addEventListener("click", e => {
   // Update Dog
   if (e.target.dataset.action === "right") {
+    const dogId = e.target.dataset.id
     const cardLi = e.target.closest(".card")
     const matchSpan = cardLi.querySelector(".match")
-    if (matchSpan.textContent === "🐾") {
-      matchSpan.textContent = ""
-    } else {
-      matchSpan.textContent = "🐾"
-    }
-
     // Optimistic rendering
-    const dogId = e.target.dataset.id
-    const match = matchSpan.textContent === "🐾"
+    // if (matchSpan.textContent === "🐾") {
+    //   matchSpan.textContent = ""
+    // } else {
+    //   matchSpan.textContent = "🐾"
+    // }
 
-    // PATCH /dogs/:id
-    fetch(`http://localhost:3000/dogs/${dogId}`, {
-      method: "PATCH",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ match: match })
-    })
+    // use helper in fetches.js
+    matchDog(dogId)
+      .then(updatedDog => {
+        // Pessimistic rendering (using response to render)
+        matchSpan.textContent = updatedDog.match ? "🐾" : ""
+      })
 
   }
   if (e.target.dataset.action === "left") {
-    // DELETE /dogs/:id
     const dogId = e.target.dataset.id
 
-    fetch(`http://localhost:3000/dogs/${dogId}`, {
-      method: "DELETE"
-    })
+    // use helper in fetches.js
+    deleteDog(dogId)
 
     // Optimistic rendering
     const cardLi = e.target.closest(".card")
@@ -63,19 +57,13 @@ newDogForm.addEventListener("submit", function (e) {
     match: false
   }
 
-  // POST /dogs
-  fetch("http://localhost:3000/dogs", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newDog)
-  })
-    .then(response => response.json())
+  // use helper in fetches.js
+  createDog(newDog)
     .then(actualNewDog => {
       // Pessimistic rendering
       renderDog(actualNewDog)
     })
+    .catch(err => console.error(err))
 
 })
 
@@ -111,14 +99,12 @@ function renderDog(dogObj) {
 
 
 /************* Initial Render *************/
-// GET /dogs
-fetch("http://localhost:3000/dogs")
-  .then(response => response.json())
-  .then(dogsArray => {
-    dogsArray.forEach(function (dog) {
-      renderDog(dog)
-    })
+// use helper in fetches.js
+getAllDogs().then(dogsArray => {
+  dogsArray.forEach(function (dog) {
+    renderDog(dog)
   })
+})
 
 // When X event happens
 // Do Y fetch request

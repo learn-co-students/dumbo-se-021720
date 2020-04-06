@@ -4,6 +4,8 @@
 - [ ] Generate a Rails API
 - [ ] Understand CORS configuration
 - [ ] Use a serializer to render JSON
+- [ ] Understand how to transmit data between frontend and backend using the request/response cycle
+- [ ] Implement validations in Rails and use status codes to send errors
 
 ## Setting Up the Backend Rails API
 
