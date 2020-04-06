@@ -1,6 +1,7 @@
 const BASE_URL = "http://localhost:3000"
 
 // adapter pattern
+// see adapter.js for an even fancier way of setting this up
 
 // GET /dogs
 function getAllDogs() {
