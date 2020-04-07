@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Woody",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Woody-PNG-Photos.png",
-      "likes": 5
+      "likes": 8
     },
     {
       "id": 2,
       "name": "Buzz Lightyear",
       "image": "http://www.pngmart.com/files/6/Buzz-Lightyear-PNG-Transparent-Picture.png",
-      "likes": 8
+      "likes": 14
     },
     {
       "id": 3,
@@ -47,6 +47,36 @@
       "name": "Little Green Men",
       "image": "http://www.pngmart.com/files/3/Toy-Story-Alien-PNG-File.png",
       "likes": -2
+    },
+    {
+      "name": "some cool socks",
+      "image": "https://pimg.bucklecontent.com/images/products/83665545C19RFS/BRN/f/23f5c96d4e0f2fc44efa165c348061ccv3?quality=0.8&width=845",
+      "likes": 0,
+      "id": 9
+    },
+    {
+      "name": "more cool socks",
+      "image": "https://scene7.zumiez.com/is/image/zumiez/pdp_hero/Stance-x-Toy-Story-To-Infinity-And-Beyond-Crew-Socks-_324127-alt1-US.jpg",
+      "likes": 0,
+      "id": 10
+    },
+    {
+      "name": "another toy",
+      "image": "image",
+      "likes": 0,
+      "id": 11
+    },
+    {
+      "name": "123",
+      "image": "123",
+      "likes": 0,
+      "id": 12
+    },
+    {
+      "name": "aqesas",
+      "image": "a23rqwefasd",
+      "likes": 0,
+      "id": 13
     }
   ]
 }
