@@ -1,12 +1,39 @@
-// your code here!
-console.log("🥧")
+// Fetches
+const BASE_URL = "http://localhost:3000"
+function createBake(newBake) {
+  return fetch(BASE_URL + "/bakes", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(newBake)
+  })
+    .then(r => r.json())
+}
 
-// get access to the sidebar container (#bakes-container)
-const bakesContainer = document.querySelector("#bakes-container")
+function getBakes() {
+  return fetch(BASE_URL + "/bakes")
+    .then(r => r.json())
+}
 
-// **When this form is submitted**, 
+function updateScore(id, data) {
+  return fetch(BASE_URL + `/bakes/${id}/ratings`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "Authorization": "Bearer 699a9ff1-88ca-4d77-a26e-e4bc31cfc261"
+    },
+    body: JSON.stringify(data)
+  })
+    .then(r => r.json())
+}
 
-// get access to the form and add an event listner to it
+function getWinner() {
+  return fetch(BASE_URL + "/bakes/winner")
+    .then(r => r.json())
+}
+
+// Event Handlers
 document.querySelector("#new-bake-form").addEventListener("submit", e => {
   e.preventDefault()
 
@@ -17,61 +44,47 @@ document.querySelector("#new-bake-form").addEventListener("submit", e => {
     description: e.target.description.value
   }
 
-  fetch("http://localhost:3000/bakes", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(newBake)
-  })
-    .then(r => r.json())
-    .then(actualNewBake => {
-      renderBakeSidebar(actualNewBake)
-    })
+  createBake(newBake)
+    .then(renderBakeSidebar)
 })
 
+document.querySelector("#judge-bake-button").addEventListener("click", () => {
+  getWinner()
+    .then(winner => renderWinner(winner.id))
+})
 
-fetch("http://localhost:3000/bakes")
-  .then(r => r.json())
-  .then(bakesArray => {
-    // forEach bake, call a fn to render that individual bake onto the list
-    bakesArray.forEach(renderBakeSidebar)
-    renderDetail(bakesArray[0])
+// Render Helpers
+function renderWinner(id) {
+  document.querySelectorAll(".item").forEach(bakeLi => {
+    if (parseInt(bakeLi.dataset.id) === id) {
+      bakeLi.className = "item winner"
+    } else {
+      bakeLi.className = "item"
+    }
   })
+}
 
 function renderBakeSidebar(bakeObj) {
   // create the element
   const bakeLi = document.createElement("li")
+
   // give it some attributes
   bakeLi.className = "item"
   bakeLi.dataset.id = bakeObj.id
   bakeLi.textContent = bakeObj.name
-  // append /slap on the DOM
-  bakesContainer.append(bakeLi)
 
-  // **When a bake is clicked in the sidebar**, 
-  bakeLi.addEventListener("click", e => {
-    // Closure
+  // slap on the DOM
+  document.querySelector("#bakes-container").append(bakeLi)
+
+  bakeLi.addEventListener("click", () => {
     renderDetail(bakeObj)
   })
 }
 
+
 function renderDetail(bakeObj) {
-  console.log("ORIGINAL BAKE: ", bakeObj)
-  // the details for the bake should show up in the detail area.
   const detailDiv = document.querySelector("#detail")
-  detailDiv.innerHTML = ""
-  // detailDiv.innerHTML = `
-  //   <img src="${bakeObj.image_url}" alt="${bakeObj.name}">
-  //   <h1>${bakeObj.name}</h1>
-  //   <p class="description">
-  //   ${bakeObj.description}
-  //   </p>
-  //   <form id="score-form" data-id="${bakeObj.id}">
-  //     <input value="${bakeObj.score}" type="number" name="score" min="0" max="10" step="1">
-  //     <input type="submit" value="Rate">
-  //   </form>
-  // `
+  detailDiv.innerHTML = "" // clear out the old contents
 
   const img = document.createElement("img")
   img.src = bakeObj.image_url
@@ -104,59 +117,22 @@ function renderDetail(bakeObj) {
   detailDiv.append(img, h1, p, form)
 
   form.addEventListener("submit", e => {
-    // also a closure
     e.preventDefault()
-    const userScore = e.target.score.value
 
-    updateScore(userScore, bakeObj)
+    const bakeData = {
+      score: parseInt(e.target.score.value)
+    }
+
+    updateScore(bakeObj.id, bakeData)
+      .then(updatedBake => {
+        bakeObj.score = updatedBake.score
+      })
   })
-
-  // create some DOM elements 
-  //   < img src = "https://thegreatbritishbakeoff.co.uk/wp-content/uploads/2019/10/icecreams_forweb.jpg" alt = "Alice’s Orange & Cardamom ‘Ice Cream’ Buns" >
-  //     <h1>Alice’s Orange & Cardamom ‘Ice Cream’ Buns</h1>
-  //     <p class="description">
-  //       Fragrant breads baked to resemble ice-cream tubs are topped with a delicious cream-cheese icing and sprinkles. They are great fun to serve to children.
-  // </p>
-  //     <form id="score-form" data-id="1">
-  //       <input value="10" type="number" name="score" min="0" max="10" step="1">
-  //         <input type="submit" value="Rate">
-  // </form>
-
 }
 
-function updateScore(userScore, bakeObj) {
-  fetch(`http://localhost:3000/bakes/${bakeObj.id}/ratings`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "Authorization": "Bearer 699a9ff1-88ca-4d77-a26e-e4bc31cfc261"
-    },
-    body: JSON.stringify({
-      score: parseInt(userScore)
-    })
+// Initial Render
+getBakes()
+  .then(bakesArray => {
+    bakesArray.forEach(renderBakeSidebar)
+    renderDetail(bakesArray[0])
   })
-    .then(r => r.json())
-    .then(updatedBake => {
-      console.log("UPDATED BAKE: ", updatedBake)
-      bakeObj.score = updatedBake.score
-      console.log("ORIGINAL BAKE: ", bakeObj)
-    })
-}
-
-// INDIVIDUAL EVENT LISTENERS
-
-
-function outerFn(num) {
-  let i = 2 + num
-
-  function innerFn() {
-    // closure
-    console.log(i)
-  }
-
-  innerFn()
-}
-
-outerFn(5)
-
-outerFn(7)
