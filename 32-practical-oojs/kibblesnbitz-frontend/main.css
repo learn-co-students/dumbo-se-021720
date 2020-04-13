@@ -1,0 +1,268 @@
+/* css variables for theming */
+:root {
+  --main-bg-color: rgb(220, 220, 220);
+  --alt-bg-color: rgba(255, 255, 255, 0.954);
+  --main-font-color: rgb(0, 0, 0);
+  --alt-font-color: rgb(255, 255, 255);
+  --theme-primary: rgba(233,11,121,1);
+  --theme-primary-gradient: linear-gradient(90deg, rgba(233,11,121,1) 0%, rgba(242,106,88,1) 100%);
+  --box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+body.dark-mode {
+  --main-bg-color: rgb(50, 50, 50);
+  --alt-bg-color: rgb(0, 0, 0);
+  --main-font-color: rgb(200, 200, 200);
+  --alt-font-color: rgb(255, 255, 255);
+  --theme-primary: rgba(91,13,232,1);
+  --theme-primary-gradient: linear-gradient(90deg, rgba(91,13,232,1) 0%, rgba(121,101,220,1) 100%);
+}
+
+/* mini reset */
+* {
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* layout */
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--main-font-color);
+  font-size: 14px;
+  transition: all 0.5s;
+  background-color: var(--main-bg-color);
+}
+
+.container {
+  display: flex;
+  max-width: 90%;
+  margin: 2rem auto;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Raleway', sans-serif;
+}
+
+/* menu */
+#menu {
+  padding: 0.5rem;
+  color: var(--alt-font-color);
+  background: var(--theme-primary-gradient);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: var(--box-shadow);
+}
+
+.toggle-switch {
+  margin: 0.5rem;
+}
+
+.toggle-switch input {
+  display: none;
+}
+
+.toggle-switch label {
+  position: relative ;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: var(--alt-bg-color);
+  border-radius: 20px;
+}
+
+.toggle-switch label::after {
+  content: '';
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  line-height: 20px;
+  padding-left: 2px;
+  border-radius: 50%;
+  background-color: var(--main-font-color);
+  top: 1px;
+  left: 1px;
+  transition: all 0.3s;
+}
+
+.toggle-switch input:checked + label::after {
+  left: 20px; 
+}
+
+.toggle-switch input:checked + label {
+  background-color: var(--alt-bg-color);
+}
+
+/* sidebar */
+aside {
+  width: 33%;
+  min-width: 300px;
+  border-right: 1px solid #ccc;
+  padding: 0 1rem;
+}
+
+/* #sign-up */
+#sign-up {
+  background-color: var(--alt-bg-color);
+  box-shadow: var(--box-shadow);
+}
+
+#sign-up h2 {
+  background: var(--theme-primary);
+  color: var(--alt-font-color);
+  margin: 0;
+  padding: 0.5em 1em;
+}
+
+#sign-up form {
+  padding: 1em;
+}
+
+#sign-up form input,
+#sign-up form textarea,
+#sign-up form select {
+  background-color: var(--alt-bg-color);
+  font-size: 1rem;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid var(--theme-primary);
+  padding: 0.5em 1em;
+  margin: 1em 0 0.25em;
+  transition: all 0.2s;
+}
+
+#sign-up form input:focus,
+#sign-up form textarea:focus,
+#sign-up form select:focus {
+  outline: none;
+  border-bottom: 3px solid var(--theme-primary);
+  font-size: 1.25em;
+}
+
+#sign-up form textarea {
+  resize: vertical;
+}
+
+#sign-up form input[type=submit] {
+  font-size: 1rem;
+  margin: 1em 0 0 0;
+  width: auto;
+  background-color: var(--theme-primary);
+  color: var(--alt-font-color);
+}
+
+/* main */
+main {
+  padding: 0 1rem;
+}
+
+#cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.card {
+  flex: 0 1 calc(33% - 1.5em);
+  background-color: var(--alt-bg-color);
+  box-shadow: var(--box-shadow);
+  animation: enter 0.25s ease-out;
+  position: relative;
+  margin: 0 0.75em 2rem 0.75em;
+}
+
+@keyframes enter {
+  0% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.card .buttons {
+  position: absolute;
+  bottom: 0;
+  transition: all 0.3s ease-in;
+  opacity: 0;
+  visibility: hidden;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0rem 2rem;
+  background-color: rgba(220, 220, 220, 0.75);
+}
+
+.card .info:hover ~ .buttons,
+.card .buttons:hover {
+  opacity: 1;
+  visibility: visible;
+}
+
+.card .buttons .swipe {
+  cursor: pointer;
+  font-size: 2em;
+  width: 2em;
+  height: 2em;
+  border-radius: 50%;
+  position: relative;
+  top: -0.5em;
+}
+
+.card .buttons .swipe:hover {
+  opacity: 1;
+}
+
+.card .buttons .swipe:focus {
+  outline: none;
+}
+
+.card .buttons .swipe.left {
+  background-color: #F05A69;
+}
+
+.card .buttons .swipe.right {
+  background-color: #6CEC98;
+}
+
+.card img {
+  width: 100%;
+}
+
+.card .info {
+  padding: 0.5rem 1rem 1rem;
+  min-height: 8rem;
+}
+
+.card h2 {
+  line-height: 2em;
+}
+
+.card h2 .name {
+  font-weight: 800;
+}
+
+.card .tags {
+  margin: 1rem 0;
+}
+
+.card .breed {
+  background-color: rgb(198, 198, 198);
+  border-radius: 1em;
+  padding: 0.15em 0.8em;
+}
+
+@media (max-width: 899px) { 
+  .card {
+    flex: 0 1 auto;
+    margin: 1em 0;
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1200px) {
+  .card {
+    flex: 0 1 calc(50% - 2em);
+    margin: 1em;
+  }
+}
