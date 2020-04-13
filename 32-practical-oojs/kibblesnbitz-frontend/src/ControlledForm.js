@@ -2,8 +2,6 @@ class ControlledForm {
   constructor(formElement) {
     this.form = formElement
 
-    this.form.addEventListener("submit", this.handleSubmit)
-
     // keep track of the current state of the form
     this.data = {}
 
@@ -12,6 +10,7 @@ class ControlledForm {
 
     // add input event handler (event delegation)
     this.form.addEventListener("input", this.handleInput)
+    this.form.addEventListener("submit", this.handleSubmit)
 
   }
 

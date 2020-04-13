@@ -5,17 +5,27 @@ const newDogForm = document.querySelector("#new-dog-form")
 const toggleCheckbox = document.querySelector("#toggle-dark-mode")
 const cardsUl = document.getElementById('cards')
 
-const controlledForm = new ControlledForm(newDogForm)
+/************* Event Listeners *************/
 
+// Toggle Dark Mode
+toggleCheckbox.addEventListener("click", function (e) {
+  document.body.classList.toggle("dark-mode")
+})
+
+// Create Dog
+const controlledForm = new ControlledForm(newDogForm)
 controlledForm.onSubmit = data => {
-  console.log("in onSubmit", data)
-  data.match = false
+  // make a copy of the data using spread operator
+  const dogData = {
+    ...data,
+    match: false
+  }
 
   // use helper in fetches.js
-  adapter.createDog(data)
+  adapter.createDog(dogData)
     .then(actualNewDog => {
       // Pessimistic rendering
-      // create a DogCard component with th data for each dog
+      // create a DogCard component with the data for each dog
       const dogCard = new DogCard(actualNewDog)
 
       // tell the card to render itself
@@ -25,14 +35,6 @@ controlledForm.onSubmit = data => {
 
 }
 
-/************* Event Listeners *************/
-
-// Toggle Dark Mode
-toggleCheckbox.addEventListener("click", function (e) {
-  document.body.classList.toggle("dark-mode")
-})
-
-// Create Dog
 // newDogForm.addEventListener("submit", function (e) {
 //   e.preventDefault() // 0. always use this for submit events!
 
