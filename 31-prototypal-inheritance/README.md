@@ -10,33 +10,31 @@
 ### Notes
 
 ```rb
-
-class Animal
-  attr_reader :first_name
+class Dog
+  attr_accessor :first_name, :fav_snacks
 
   @@all = []
 
-  def initialize(first_name)
+  def initialize(first_name, fav_snacks)
     @first_name = first_name
+    @fav_snacks = fav_snacks
     @@all << self
   end
 
-  # instance method
   def speak
-    puts "hi my name is #{self.first_name}"
-  end
-
-  # class method 
-  def self.find_by_name(name)
-    self.all.find do |animal|
-      animal.name == name
-    end
+    puts "hi my name is #{this.firstName}"
   end
 
   def self.all
     @@all
   end
+
+  def self.find_by_name
+
+  end
+
 end
+
 
 ```
 
