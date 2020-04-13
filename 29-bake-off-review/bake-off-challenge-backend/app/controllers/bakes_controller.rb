@@ -19,7 +19,7 @@ class BakesController < ApplicationController
     if bake.valid?
       render json: bake
     else
-      render json: { errors: bake.errors.full_messages }, status: 403
+      render json: { errors: bake.errors.full_messages }, status: 400
     end
   end
 
