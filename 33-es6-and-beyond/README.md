@@ -124,8 +124,16 @@ const explicitReturn = () => {
   return 'hi'
 }
 
+const implicitReturnObj = () => ({
+  greeting: 'hi'
+})
+
+const withNoArgs = () => `hi`
 const withOneArgOnly = name => `hi ${name}`
 const withMultipleArgs = (name, greet) => `${greet} ${name}`
+
+// this is how we invoke it
+withNoArgs()
 
 // less code ↓
 const double = function (num) {
@@ -220,6 +228,9 @@ names.map((name) => name.toUpperCase())
 const upperCaser = name => name.toUpperCase()
 names.map(upperCaser)
 
+// avoid this: (useless fn wrapping)
+names.map(name => upperCaser(name))
+
 // be careful of extra args!
 const nums = ["1","2","3"]
 nums.map(parseInt)
@@ -263,10 +274,12 @@ function dynamicSetKeys(obj, key, val) {
 }
 
 // also works when creating objects:
+// <input name="photo" value="img.png" >
 function handleInputChange(e) {
   const inputValue = {
     [e.target.name]: e.target.value
   }
+  // { photo: "img.png" }
 
   return inputValue
 }
@@ -403,8 +416,12 @@ const stringWithLogicalAnd = `This technique will ALSO add some things to the st
 
 ### External Resources
 
-- [Modern JavaScript](http://www.reactnativeexpress.com/modern_javascript)
 - [Wes Bos Simple Guide for Undertanding Destructuring in JS](https://wesbos.com/destructuring-objects/)
+- [Does it mutate?](https://doesitmutate.xyz/)
+- [Caniuse](https://caniuse.com/#search=spread)
+- [Babel REPL](https://babeljs.io/en/repl)
+- [ECMAScript Proposals](https://github.com/tc39/proposals)
+- [Modern JavaScript](http://www.reactnativeexpress.com/modern_javascript)
 - [MDN Article on ES6 Object Shorthand Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Object_initializer#New_notations_in_ECMAScript_2015)
 - [MDN Article on ES6 Spread Operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
 - [MDN Article on Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
