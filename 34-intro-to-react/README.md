@@ -18,9 +18,28 @@ Intro to React
 - [ ] Decide on an app to build together!
 
 ## Notes
-- Declarative vs Imperative Programming
+- Declarative vs Imperative
+
+Imperative: specific instructions telling exactly what to do
+- make some rice
+  - season the rice
+  - cook it for 30 minutes
+- make a tortilla
+- etc etc etc
+
+Declarative: describute what you want, and relying on an abstraction to make it happen
+- give me a chorizo burrito with brown rice
+
+
+declarative: describing something in a 'stateless sense'
+imperitive: describing each step
+
+- declarative defines objects, imperative defines actions
+
+
 - Components
-- Turn these objects into components
+- Turn these objects into components:
+
 ```js
 const tasks = [
   { title: "Learn React", description: "Read the docs!", done: false },
