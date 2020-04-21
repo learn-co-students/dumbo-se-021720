@@ -1,0 +1,902 @@
+[
+    {
+        "id": 1,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/ce1db338-5914-4505-9fa2-ca4bcddb1b4e-hecate-verona-luxury-doghouse.jpg",
+        "name": "Airy Apartment in Quiet Downtown",
+        "rating": 2.2,
+        "city": "Atlanta",
+        "price": 17,
+        "favorite": false
+    },
+    {
+        "id": 2,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Gorgeous Apartment in Historic District",
+        "rating": 2.1,
+        "city": "New York",
+        "price": 45,
+        "favorite": false
+    },
+    {
+        "id": 3,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Beautiful Apartment in Historic Uptown",
+        "rating": 3.6,
+        "city": "New York",
+        "price": 39,
+        "favorite": false
+    },
+    {
+        "id": 4,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Lovely Home in Lively Uptown",
+        "rating": 3.6,
+        "city": "New York",
+        "price": 27,
+        "favorite": false
+    },
+    {
+        "id": 5,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Airy Studio in Lively District",
+        "rating": 2.9,
+        "city": "Atlanta",
+        "price": 20,
+        "favorite": false
+    },
+    {
+        "id": 6,
+        "image": "https://thinkoutside.biz/wp-content/uploads/2018/01/The-Shack-Dog-House-EC4200-HR-1.jpg",
+        "name": "Gorgeous Home in Lively Uptown",
+        "rating": 4.1,
+        "city": "New York",
+        "price": 29,
+        "favorite": false
+    },
+    {
+        "id": 7,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Convenient Apartment in Lively Neighborhood",
+        "rating": 4.6,
+        "city": "Atlanta",
+        "price": 47,
+        "favorite": false
+    },
+    {
+        "id": 8,
+        "image": "https://cdn3.volusion.com/ormg6.urzw5/v/vspfiles/photos/BFW-CUBIX-2.jpg?v-cache=1528278873",
+        "name": "Stunning Apartment in Historic Neighborhood",
+        "rating": 2.8,
+        "city": "Atlanta",
+        "price": 61,
+        "favorite": false
+    },
+    {
+        "id": 9,
+        "image": "https://funnyneel.com/image/files/i/01-2014/funny-gadgets-dog-house.preview.jpg",
+        "name": "Convenient Home in Quiet Uptown",
+        "rating": 4.5,
+        "city": "New York",
+        "price": 63,
+        "favorite": false
+    },
+    {
+        "id": 10,
+        "image": "https://thinkoutside.biz/wp-content/uploads/2018/01/The-Shack-Dog-House-EC4200-HR-1.jpg",
+        "name": "Gorgeous Studio in Scenic Neighborhood",
+        "rating": 1.1,
+        "city": "Atlanta",
+        "price": 22,
+        "favorite": false
+    },
+    {
+        "id": 11,
+        "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/1563564-right-1",
+        "name": "Modern Home in Beautiful Neighborhood",
+        "rating": 4.6,
+        "city": "New York",
+        "price": 70,
+        "favorite": false
+    },
+    {
+        "id": 12,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Cozy Flat in Beautiful Downtown",
+        "rating": 3,
+        "city": "New York",
+        "price": 50,
+        "favorite": false
+    },
+    {
+        "id": 13,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Cozy Flat in Historic Neighborhood",
+        "rating": 2.2,
+        "city": "Atlanta",
+        "price": 77,
+        "favorite": false
+    },
+    {
+        "id": 14,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Convenient Apartment in Quiet Neighborhood",
+        "rating": 3.8,
+        "city": "Atlanta",
+        "price": 52,
+        "favorite": false
+    },
+    {
+        "id": 15,
+        "image": "https://cdn3.volusion.com/ormg6.urzw5/v/vspfiles/photos/BFW-CUBIX-2.jpg?v-cache=1528278873",
+        "name": "Stylish Studio in Historic Uptown",
+        "rating": 1.9,
+        "city": "Atlanta",
+        "price": 54,
+        "favorite": false
+    },
+    {
+        "id": 16,
+        "image": "https://cdn3.volusion.com/ormg6.urzw5/v/vspfiles/photos/BFW-CUBIX-2.jpg?v-cache=1528278873",
+        "name": "Gorgeous Apartment in Historic District",
+        "rating": 3.2,
+        "city": "New York",
+        "price": 14,
+        "favorite": false
+    },
+    {
+        "id": 17,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Stylish Apartment in Lively Neighborhood",
+        "rating": 3.8,
+        "city": "New York",
+        "price": 26,
+        "favorite": false
+    },
+    {
+        "id": 18,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Airy Studio in Scenic District",
+        "rating": 4.7,
+        "city": "Atlanta",
+        "price": 61,
+        "favorite": false
+    },
+    {
+        "id": 19,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Stunning Studio in Lively Downtown",
+        "rating": 3.1,
+        "city": "Atlanta",
+        "price": 51,
+        "favorite": false
+    },
+    {
+        "id": 20,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Modern Home in Lively Downtown",
+        "rating": 2.3,
+        "city": "New York",
+        "price": 57,
+        "favorite": false
+    },
+    {
+        "id": 21,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Stunning Home in Historic Neighborhood",
+        "rating": 4.2,
+        "city": "New York",
+        "price": 79,
+        "favorite": false
+    },
+    {
+        "id": 22,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Beautiful Studio in Quiet Uptown",
+        "rating": 2.7,
+        "city": "New York",
+        "price": 60,
+        "favorite": false
+    },
+    {
+        "id": 23,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Mid Century Apartment in Beautiful District",
+        "rating": 3.2,
+        "city": "Atlanta",
+        "price": 45,
+        "favorite": false
+    },
+    {
+        "id": 24,
+        "image": "https://cdn3.volusion.com/ormg6.urzw5/v/vspfiles/photos/BFW-CUBIX-2.jpg?v-cache=1528278873",
+        "name": "Airy Apartment in Scenic District",
+        "rating": 4,
+        "city": "Atlanta",
+        "price": 28,
+        "favorite": false
+    },
+    {
+        "id": 25,
+        "image": "https://thinkoutside.biz/wp-content/uploads/2018/01/The-Shack-Dog-House-EC4200-HR-1.jpg",
+        "name": "Stylish Studio in Quiet Uptown",
+        "rating": 4.7,
+        "city": "New York",
+        "price": 58,
+        "favorite": false
+    },
+    {
+        "id": 26,
+        "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/1563564-right-1",
+        "name": "Cozy Apartment in Historic Uptown",
+        "rating": 2.7,
+        "city": "New York",
+        "price": 53,
+        "favorite": false
+    },
+    {
+        "id": 27,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Beautiful Apartment in Quiet Downtown",
+        "rating": 3.1,
+        "city": "Atlanta",
+        "price": 31,
+        "favorite": false
+    },
+    {
+        "id": 28,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Airy Flat in Historic Uptown",
+        "rating": 4,
+        "city": "Atlanta",
+        "price": 66,
+        "favorite": false
+    },
+    {
+        "id": 29,
+        "image": "https://funnyneel.com/image/files/i/01-2014/funny-gadgets-dog-house.preview.jpg",
+        "name": "Lovely Home in Historic Uptown",
+        "rating": 1.2,
+        "city": "Atlanta",
+        "price": 36,
+        "favorite": false
+    },
+    {
+        "id": 30,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/ce1db338-5914-4505-9fa2-ca4bcddb1b4e-hecate-verona-luxury-doghouse.jpg",
+        "name": "Cozy Home in Quiet Neighborhood",
+        "rating": 4.3,
+        "city": "New York",
+        "price": 86,
+        "favorite": false
+    },
+    {
+        "id": 31,
+        "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/1563564-right-1",
+        "name": "Modern Flat in Lively Neighborhood",
+        "rating": 4.2,
+        "city": "New York",
+        "price": 50,
+        "favorite": false
+    },
+    {
+        "id": 32,
+        "image": "https://cdn.motor1.com/images/mgl/NvjmG/s1/ford-noise-cancelling-dog-kennel.jpg",
+        "name": "Beautiful Apartment in Quiet Downtown",
+        "rating": 1.5,
+        "city": "New York",
+        "price": 95,
+        "favorite": false
+    },
+    {
+        "id": 33,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Stylish Home in Scenic Uptown",
+        "rating": 3.1,
+        "city": "Atlanta",
+        "price": 31,
+        "favorite": false
+    },
+    {
+        "id": 34,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Mid Century Home in Scenic Uptown",
+        "rating": 2.2,
+        "city": "Atlanta",
+        "price": 93,
+        "favorite": false
+    },
+    {
+        "id": 35,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Cozy Apartment in Historic Uptown",
+        "rating": 3.1,
+        "city": "Atlanta",
+        "price": 59,
+        "favorite": false
+    },
+    {
+        "id": 36,
+        "image": "https://petlifetoday.com/wp-content/uploads/2017/10/shutterstock_137357879-min.jpg",
+        "name": "Stylish Flat in Scenic District",
+        "rating": 2.2,
+        "city": "New York",
+        "price": 47,
+        "favorite": false
+    },
+    {
+        "id": 37,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Gorgeous Apartment in Beautiful Uptown",
+        "rating": 1,
+        "city": "Atlanta",
+        "price": 30,
+        "favorite": false
+    },
+    {
+        "id": 38,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Gorgeous Flat in Historic Neighborhood",
+        "rating": 3.8,
+        "city": "New York",
+        "price": 41,
+        "favorite": false
+    },
+    {
+        "id": 39,
+        "image": "https://funnyneel.com/image/files/i/01-2014/funny-gadgets-dog-house.preview.jpg",
+        "name": "Stylish Apartment in Historic Neighborhood",
+        "rating": 1.2,
+        "city": "New York",
+        "price": 98,
+        "favorite": false
+    },
+    {
+        "id": 40,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Modern Home in Scenic Neighborhood",
+        "rating": 1.4,
+        "city": "Atlanta",
+        "price": 46,
+        "favorite": false
+    },
+    {
+        "id": 41,
+        "image": "https://i.pinimg.com/originals/24/bb/c7/24bbc748799c4581a24aebe909c10ad3.jpg",
+        "name": "Airy Home in Beautiful Neighborhood",
+        "rating": 2.9,
+        "city": "Atlanta",
+        "price": 60,
+        "favorite": false
+    },
+    {
+        "id": 42,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Stylish Flat in Quiet Downtown",
+        "rating": 3.2,
+        "city": "New York",
+        "price": 91,
+        "favorite": false
+    },
+    {
+        "id": 43,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Beautiful Home in Quiet Downtown",
+        "rating": 4.6,
+        "city": "New York",
+        "price": 40,
+        "favorite": false
+    },
+    {
+        "id": 44,
+        "image": "https://thinkoutside.biz/wp-content/uploads/2018/01/The-Shack-Dog-House-EC4200-HR-1.jpg",
+        "name": "Cozy Home in Historic Downtown",
+        "rating": 3.3,
+        "city": "Atlanta",
+        "price": 26,
+        "favorite": false
+    },
+    {
+        "id": 45,
+        "image": "https://funnyneel.com/image/files/i/01-2014/funny-gadgets-dog-house.preview.jpg",
+        "name": "Modern Studio in Historic Downtown",
+        "rating": 2.4,
+        "city": "New York",
+        "price": 27,
+        "favorite": false
+    },
+    {
+        "id": 46,
+        "image": "https://cdn.motor1.com/images/mgl/NvjmG/s1/ford-noise-cancelling-dog-kennel.jpg",
+        "name": "Stylish Flat in Historic Uptown",
+        "rating": 3.7,
+        "city": "New York",
+        "price": 65,
+        "favorite": false
+    },
+    {
+        "id": 47,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Mid Century Home in Historic Downtown",
+        "rating": 1.8,
+        "city": "New York",
+        "price": 61,
+        "favorite": false
+    },
+    {
+        "id": 48,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/ce1db338-5914-4505-9fa2-ca4bcddb1b4e-hecate-verona-luxury-doghouse.jpg",
+        "name": "Stylish Flat in Lively Downtown",
+        "rating": 1,
+        "city": "Atlanta",
+        "price": 26,
+        "favorite": false
+    },
+    {
+        "id": 49,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Stylish Flat in Beautiful Downtown",
+        "rating": 4.5,
+        "city": "Atlanta",
+        "price": 44,
+        "favorite": false
+    },
+    {
+        "id": 50,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Stunning Studio in Lively Neighborhood",
+        "rating": 4.8,
+        "city": "Atlanta",
+        "price": 45,
+        "favorite": false
+    },
+    {
+        "id": 51,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Lovely Studio in Historic District",
+        "rating": 1.4,
+        "city": "Atlanta",
+        "price": 37,
+        "favorite": false
+    },
+    {
+        "id": 52,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Modern Apartment in Scenic Neighborhood",
+        "rating": 2.9,
+        "city": "Atlanta",
+        "price": 67,
+        "favorite": false
+    },
+    {
+        "id": 53,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/ce1db338-5914-4505-9fa2-ca4bcddb1b4e-hecate-verona-luxury-doghouse.jpg",
+        "name": "Stylish Apartment in Scenic District",
+        "rating": 2.2,
+        "city": "New York",
+        "price": 97,
+        "favorite": false
+    },
+    {
+        "id": 54,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Gorgeous Flat in Scenic Neighborhood",
+        "rating": 3,
+        "city": "Atlanta",
+        "price": 75,
+        "favorite": false
+    },
+    {
+        "id": 55,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Convenient Apartment in Lively Downtown",
+        "rating": 3.8,
+        "city": "Atlanta",
+        "price": 78,
+        "favorite": false
+    },
+    {
+        "id": 56,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Modern Home in Quiet District",
+        "rating": 1.7,
+        "city": "New York",
+        "price": 51,
+        "favorite": false
+    },
+    {
+        "id": 57,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Lovely Flat in Historic Uptown",
+        "rating": 2.9,
+        "city": "New York",
+        "price": 70,
+        "favorite": false
+    },
+    {
+        "id": 58,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Mid Century Apartment in Historic Downtown",
+        "rating": 1.6,
+        "city": "Atlanta",
+        "price": 46,
+        "favorite": false
+    },
+    {
+        "id": 59,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Airy Studio in Lively District",
+        "rating": 3.4,
+        "city": "New York",
+        "price": 72,
+        "favorite": false
+    },
+    {
+        "id": 60,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Cozy Home in Beautiful District",
+        "rating": 1.6,
+        "city": "Atlanta",
+        "price": 99,
+        "favorite": false
+    },
+    {
+        "id": 61,
+        "image": "https://i.pinimg.com/originals/24/bb/c7/24bbc748799c4581a24aebe909c10ad3.jpg",
+        "name": "Mid Century Home in Historic District",
+        "rating": 1.5,
+        "city": "Atlanta",
+        "price": 70,
+        "favorite": false
+    },
+    {
+        "id": 62,
+        "image": "https://thinkoutside.biz/wp-content/uploads/2018/01/The-Shack-Dog-House-EC4200-HR-1.jpg",
+        "name": "Mid Century Studio in Lively District",
+        "rating": 1.7,
+        "city": "Atlanta",
+        "price": 52,
+        "favorite": false
+    },
+    {
+        "id": 63,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/ce1db338-5914-4505-9fa2-ca4bcddb1b4e-hecate-verona-luxury-doghouse.jpg",
+        "name": "Convenient Apartment in Scenic Neighborhood",
+        "rating": 2.3,
+        "city": "Atlanta",
+        "price": 66,
+        "favorite": false
+    },
+    {
+        "id": 64,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Modern Flat in Scenic District",
+        "rating": 1.4,
+        "city": "Atlanta",
+        "price": 32,
+        "favorite": false
+    },
+    {
+        "id": 65,
+        "image": "https://petlifetoday.com/wp-content/uploads/2017/10/shutterstock_137357879-min.jpg",
+        "name": "Gorgeous Apartment in Beautiful Downtown",
+        "rating": 3.1,
+        "city": "New York",
+        "price": 91,
+        "favorite": false
+    },
+    {
+        "id": 66,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Airy Studio in Beautiful Downtown",
+        "rating": 2.8,
+        "city": "New York",
+        "price": 26,
+        "favorite": false
+    },
+    {
+        "id": 67,
+        "image": "https://thinkoutside.biz/wp-content/uploads/2018/01/The-Shack-Dog-House-EC4200-HR-1.jpg",
+        "name": "Mid Century Apartment in Scenic Downtown",
+        "rating": 3.4,
+        "city": "Atlanta",
+        "price": 61,
+        "favorite": false
+    },
+    {
+        "id": 68,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Modern Apartment in Quiet Neighborhood",
+        "rating": 2.2,
+        "city": "New York",
+        "price": 58,
+        "favorite": false
+    },
+    {
+        "id": 69,
+        "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/1563564-right-1",
+        "name": "Stunning Studio in Lively Downtown",
+        "rating": 2.7,
+        "city": "Atlanta",
+        "price": 48,
+        "favorite": false
+    },
+    {
+        "id": 70,
+        "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/1563564-right-1",
+        "name": "Mid Century Studio in Lively Downtown",
+        "rating": 3,
+        "city": "Atlanta",
+        "price": 89,
+        "favorite": false
+    },
+    {
+        "id": 71,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Cozy Home in Lively Neighborhood",
+        "rating": 3.2,
+        "city": "New York",
+        "price": 68,
+        "favorite": false
+    },
+    {
+        "id": 72,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Stylish Apartment in Lively Uptown",
+        "rating": 3.6,
+        "city": "New York",
+        "price": 89,
+        "favorite": false
+    },
+    {
+        "id": 73,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Gorgeous Flat in Beautiful Downtown",
+        "rating": 2.4,
+        "city": "New York",
+        "price": 74,
+        "favorite": false
+    },
+    {
+        "id": 74,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Stylish Studio in Beautiful Downtown",
+        "rating": 1.6,
+        "city": "New York",
+        "price": 12,
+        "favorite": false
+    },
+    {
+        "id": 75,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Stunning Apartment in Historic Neighborhood",
+        "rating": 2.9,
+        "city": "Atlanta",
+        "price": 67,
+        "favorite": false
+    },
+    {
+        "id": 76,
+        "image": "https://petlifetoday.com/wp-content/uploads/2017/10/shutterstock_137357879-min.jpg",
+        "name": "Convenient Apartment in Lively Downtown",
+        "rating": 3.8,
+        "city": "Atlanta",
+        "price": 58,
+        "favorite": false
+    },
+    {
+        "id": 77,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Gorgeous Apartment in Lively Downtown",
+        "rating": 3.2,
+        "city": "New York",
+        "price": 20,
+        "favorite": false
+    },
+    {
+        "id": 78,
+        "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/1563564-right-1",
+        "name": "Beautiful Apartment in Quiet District",
+        "rating": 3.5,
+        "city": "Atlanta",
+        "price": 43,
+        "favorite": false
+    },
+    {
+        "id": 79,
+        "image": "https://cdn3.volusion.com/ormg6.urzw5/v/vspfiles/photos/BFW-CUBIX-2.jpg?v-cache=1528278873",
+        "name": "Modern Apartment in Scenic Downtown",
+        "rating": 4.9,
+        "city": "Atlanta",
+        "price": 52,
+        "favorite": false
+    },
+    {
+        "id": 80,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/ce1db338-5914-4505-9fa2-ca4bcddb1b4e-hecate-verona-luxury-doghouse.jpg",
+        "name": "Airy Home in Beautiful Neighborhood",
+        "rating": 2.6,
+        "city": "Atlanta",
+        "price": 39,
+        "favorite": false
+    },
+    {
+        "id": 81,
+        "image": "https://funnyneel.com/image/files/i/01-2014/funny-gadgets-dog-house.preview.jpg",
+        "name": "Cozy Apartment in Lively Downtown",
+        "rating": 1.2,
+        "city": "Atlanta",
+        "price": 33,
+        "favorite": false
+    },
+    {
+        "id": 82,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Beautiful Home in Scenic Uptown",
+        "rating": 2.3,
+        "city": "New York",
+        "price": 21,
+        "favorite": false
+    },
+    {
+        "id": 83,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Lovely Studio in Beautiful Uptown",
+        "rating": 2.5,
+        "city": "Atlanta",
+        "price": 30,
+        "favorite": false
+    },
+    {
+        "id": 84,
+        "image": "https://i.etsystatic.com/7583922/r/il/7ef73f/1059263558/il_570xN.1059263558_qhur.jpg",
+        "name": "Stylish Studio in Lively District",
+        "rating": 3,
+        "city": "Atlanta",
+        "price": 16,
+        "favorite": false
+    },
+    {
+        "id": 85,
+        "image": "https://thinkoutside.biz/wp-content/uploads/2018/01/The-Shack-Dog-House-EC4200-HR-1.jpg",
+        "name": "Airy Home in Historic Downtown",
+        "rating": 1,
+        "city": "New York",
+        "price": 13,
+        "favorite": false
+    },
+    {
+        "id": 86,
+        "image": "https://thebeastreviews.com/wp-content/uploads/2020/10/Best-Dog-Houses.jpg",
+        "name": "Modern Home in Scenic Downtown",
+        "rating": 3.9,
+        "city": "New York",
+        "price": 49,
+        "favorite": false
+    },
+    {
+        "id": 87,
+        "image": "https://funnyneel.com/image/files/i/01-2014/funny-gadgets-dog-house.preview.jpg",
+        "name": "Stunning Home in Scenic District",
+        "rating": 4.1,
+        "city": "New York",
+        "price": 81,
+        "favorite": false
+    },
+    {
+        "id": 88,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Mid Century Studio in Beautiful Neighborhood",
+        "rating": 3.7,
+        "city": "New York",
+        "price": 79,
+        "favorite": false
+    },
+    {
+        "id": 89,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Stylish Flat in Historic District",
+        "rating": 4.2,
+        "city": "Atlanta",
+        "price": 38,
+        "favorite": false
+    },
+    {
+        "id": 90,
+        "image": "https://assets.petco.com/petco/image/upload/f_auto,q_auto/1563564-right-1",
+        "name": "Modern Apartment in Beautiful District",
+        "rating": 3.9,
+        "city": "New York",
+        "price": 29,
+        "favorite": false
+    },
+    {
+        "id": 91,
+        "image": "https://i.pinimg.com/originals/24/bb/c7/24bbc748799c4581a24aebe909c10ad3.jpg",
+        "name": "Beautiful Flat in Quiet Uptown",
+        "rating": 1.8,
+        "city": "Atlanta",
+        "price": 43,
+        "favorite": false
+    },
+    {
+        "id": 92,
+        "image": "https://i.pinimg.com/originals/24/bb/c7/24bbc748799c4581a24aebe909c10ad3.jpg",
+        "name": "Beautiful Studio in Beautiful District",
+        "rating": 2.4,
+        "city": "Atlanta",
+        "price": 20,
+        "favorite": false
+    },
+    {
+        "id": 93,
+        "image": "https://cdn3.volusion.com/ormg6.urzw5/v/vspfiles/photos/BFW-CUBIX-2.jpg?v-cache=1528278873",
+        "name": "Stylish Home in Historic Uptown",
+        "rating": 4.4,
+        "city": "Atlanta",
+        "price": 33,
+        "favorite": false
+    },
+    {
+        "id": 94,
+        "image": "https://cdn3.volusion.com/ormg6.urzw5/v/vspfiles/photos/BFW-CUBIX-2.jpg?v-cache=1528278873",
+        "name": "Stunning Flat in Lively Downtown",
+        "rating": 4.5,
+        "city": "Atlanta",
+        "price": 53,
+        "favorite": false
+    },
+    {
+        "id": 95,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Cozy Home in Historic Neighborhood",
+        "rating": 4,
+        "city": "Atlanta",
+        "price": 96,
+        "favorite": false
+    },
+    {
+        "id": 96,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Modern Studio in Beautiful District",
+        "rating": 2.6,
+        "city": "Atlanta",
+        "price": 94,
+        "favorite": false
+    },
+    {
+        "id": 97,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/e7fd2f69-8c5b-4865-8add-d3ae27693f45-bowwowhaus.jpg",
+        "name": "Modern Apartment in Beautiful Uptown",
+        "rating": 3.8,
+        "city": "Atlanta",
+        "price": 12,
+        "favorite": false
+    },
+    {
+        "id": 98,
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRGu3wZzqFNT3IGEQZKDVzGQMbPQOgRZ4e_lxzlPiPdwtDxhIJH&usqp=CAU",
+        "name": "Cozy Studio in Historic Uptown",
+        "rating": 3.6,
+        "city": "New York",
+        "price": 67,
+        "favorite": false
+    },
+    {
+        "id": 99,
+        "image": "https://loveincorporated.blob.core.windows.net/contentimages/gallery/c3e1659b-3a95-4316-b5df-c3ac4ae72685-Windsor%20Castle%20replica%201.jpg",
+        "name": "Modern Flat in Scenic Uptown",
+        "rating": 2.8,
+        "city": "New York",
+        "price": 28,
+        "favorite": false
+    },
+    {
+        "id": 100,
+        "image": "https://cdn.homedit.com/wp-content/uploads/2019/02/Green-dog-cool-house-design.jpg",
+        "name": "Mid Century Studio in Quiet District",
+        "rating": 3.7,
+        "city": "New York",
+        "price": 55,
+        "favorite": false
+    }
+]
