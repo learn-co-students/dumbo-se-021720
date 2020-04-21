@@ -4,10 +4,10 @@ import ListingsContainer from './ListingsContainer';
 
 const App = () => {
   return (
-    <div>
+    <>
       <NavBar />
       <ListingsContainer />
-    </div>
+    </>
   );
 }
 
