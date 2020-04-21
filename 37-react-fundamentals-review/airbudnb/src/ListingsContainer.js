@@ -1,6 +1,7 @@
 import React from 'react'
 import ListingCard from './ListingCard'
 import FilterBar from './FilterBar'
+import Pager from './Pager'
 
 // temporary until we can fetch
 // import dogHouses from './db.json'
@@ -10,7 +11,8 @@ class ListingsContainer extends React.Component {
   // initial state
   state = {
     fourStarOnly: false,
-    startIndex: 0
+    startIndex: 0,
+    dogHouses: []
   }
 
   // Event handlers
@@ -21,17 +23,29 @@ class ListingsContainer extends React.Component {
     })
   }
 
-  // TODO: refactor to one updateIndex fn
-  handleDecreaseIndex = () => {
-    this.setState({ startIndex: this.state.startIndex - 15 })
+  handleFetch = () => {
+    // fetch GET /listings
+    fetch("http://localhost:3001/listings")
+      .then(r => r.json())
+      .then(listings => {
+        this.setState({ dogHouses: listings })
+      })
   }
 
-  handleIncreaseIndex = () => {
-    this.setState({ startIndex: this.state.startIndex + 15 })
+  handleUpdateIndex = newIndex => {
+    this.setState({ startIndex: newIndex })
   }
+
+  // handleDecreaseIndex = () => {
+  //   this.setState({ startIndex: this.state.startIndex - 15 })
+  // }
+
+  // handleIncreaseIndex = () => {
+  //   this.setState({ startIndex: this.state.startIndex + 15 })
+  // }
 
   getFilteredDoghouses() {
-    let dogHousesToDisplay = dogHouses
+    let dogHousesToDisplay = this.state.dogHouses
     if (this.state.fourStarOnly) {
       dogHousesToDisplay = dogHousesToDisplay.filter(dogHouse => dogHouse.rating >= 4)
     }
@@ -64,11 +78,11 @@ class ListingsContainer extends React.Component {
         <section className="listings">
           {this.renderCards()}
         </section>
-        {/* TODO: refactor to a pager component */}
-        <div className="pager">
-          <button disabled={this.state.startIndex <= 0} onClick={this.handleDecreaseIndex}>Prev</button>
-          <button disabled={this.state.startIndex + 15 >= this.getFilteredDoghouses().length} onClick={this.handleIncreaseIndex}>Next</button>
-        </div>
+        <Pager
+          startIndex={this.state.startIndex}
+          dogHouseLength={this.getFilteredDoghouses().length}
+          handleUpdateIndex={this.handleUpdateIndex}
+        />
       </main>
     )
   }
