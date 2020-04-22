@@ -4,7 +4,7 @@ import ListingsContainer from './ListingsContainer';
 
 class App extends React.Component {
   state = {
-    searchTerm: "New York"
+    searchTerm: ""
   }
 
   handleUpdateSearch = event => {
