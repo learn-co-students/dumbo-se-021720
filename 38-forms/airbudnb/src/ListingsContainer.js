@@ -32,8 +32,31 @@ class ListingsContainer extends React.Component {
     this.setState({ startIndex: startIndex })
   }
 
+  handleUpdateListing = updatedListing => {
+    console.log(updatedListing)
+
+    // update ONLY the one object in our listings in state that has changed
+    const updatedListings = this.state.listings.map(listing => {
+      if (listing.id === updatedListing.id) {
+        return updatedListing
+      } else {
+        return listing
+      }
+    })
+
+    this.setState({ listings: updatedListings })
+  }
+
+
+
+
+
+
+
   getFilteredListings() {
-    let listingsToDisplay = this.state.listings
+    let listingsToDisplay = this.state.listings.filter(listing => {
+      return listing.city.toLowerCase().includes(this.props.searchTerm.toLowerCase())
+    })
     if (this.state.fourStarOnly) {
       listingsToDisplay = listingsToDisplay.filter(listing => listing.rating >= 4)
     }
@@ -43,7 +66,7 @@ class ListingsContainer extends React.Component {
   renderCards() {
     return this.getFilteredListings()
       .slice(this.state.startIndex, this.state.startIndex + 15)
-      .map(listing => <ListingCard key={listing.id} listing={listing} />)
+      .map(listing => <ListingCard key={listing.id} listing={listing} handleUpdateListing={this.handleUpdateListing} />)
   }
 
   render() {

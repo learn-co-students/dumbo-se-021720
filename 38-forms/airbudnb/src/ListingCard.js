@@ -21,7 +21,8 @@ class ListingCard extends React.Component {
   }
 
   render() {
-    const { image, name, city, price, rating } = this.props.listing
+    const { handleUpdateListing } = this.props
+    const { id, image, name, city, price, rating } = this.props.listing
     const { favorite, showForm } = this.state
 
     return (
@@ -41,7 +42,7 @@ class ListingCard extends React.Component {
         </div>
         <div className="reviews">
           <button onClick={this.toggleReviewForm}>{showForm ? "Hide" : "Show"} Review Form</button>
-          {showForm && <ListingReview />}
+          {showForm && <ListingReview listingId={id} handleUpdateListing={handleUpdateListing} />}
         </div>
       </div>
     )

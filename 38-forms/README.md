@@ -21,6 +21,8 @@ State, Events, and Conditional Rendering
   - [ ] filter by price
   - [ ] sort by rating
   - [ ] sort by price
+  - [ ] debounce the search bar
+  - [ ] dynamic number of cards on the page as part pagination
 
 Key Terms:
 - **Controlled Form**: When component state controls the values of input fields in a form
