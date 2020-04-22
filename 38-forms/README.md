@@ -19,6 +19,12 @@ State, Events, and Conditional Rendering
   - [ ] leave reviews
 - What filters should we add?
   - [ ] filter by price
+  - [ ] sort by rating
+  - [ ] sort by price
+
+Key Terms:
+- **Controlled Form**: When component state controls the values of input fields in a form
+- **Inverse Data Flow**: Using a callback function to pass data from a child component to a parent component
 
 ### Vanilla JS Forms
 In vanilla JS, our typical process for working with forms and getting access to the form data in our application looked something like this:
@@ -228,7 +234,59 @@ class CommentForm extends React.Component {
 
 
 ### Advanced State Updates: Arrays
+These are some common strategies for updating arrays in state *without* mutating the original array.
 
+#### Adding to an array
+- Use the spread operator!
+
+```js
+addComment = newComment => {
+  // spread to create a new array and add new comment at the end
+  const updatedComments = [...this.state.comments, newComment] 
+
+  this.setState({ 
+    comments: updatedComments
+  })
+}
+```
+
+#### Removing from an array
+- Use filter!
+
+```js
+removeComment = commentId => {
+  // filter to return a new array with the comment we don't want removed
+  const updatedComments = this.state.comments.filter(comment => comment.id !== commentId) 
+
+  this.setState({ 
+    comments: updatedComments
+  })
+}
+```
+
+#### Updating an item in an array
+- Use map!
+
+```js
+updateComment = updatedComment => {
+  // filter to return a new array with the comment we don't want removed
+  const updatedComments = this.state.comments.map(comment => {
+    if (comment.id === updatedComment.id) {
+      // if the comment in state is the one we want to update, replace it with the new updated object
+      return updatedComment
+    } else {
+      // otherwise return the original object
+      return comment
+    }
+  }) 
+
+  this.setState({ 
+    comments: updatedComments
+  })
+}
+```
+
+If you only want to update one attribute instead of replacing the whole object:
 ```js
 
   // updating one object in an array

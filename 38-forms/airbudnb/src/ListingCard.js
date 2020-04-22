@@ -5,7 +5,7 @@ class ListingCard extends React.Component {
 
   state = {
     favorite: false,
-    showReviewForm: false
+    showForm: false
   }
 
   toggleFavorite = () => {
@@ -16,18 +16,19 @@ class ListingCard extends React.Component {
 
   toggleReviewForm = () => {
     this.setState(prevState => ({
-      showReviewForm: !prevState.showReviewForm
+      showForm: !prevState.showForm
     }))
   }
 
   render() {
     const { image, name, city, price, rating } = this.props.listing
+    const { favorite, showForm } = this.state
 
     return (
       <div className="card">
         <div className="image" style={{ backgroundImage: `url(${image})` }}>
           <button onClick={this.toggleFavorite} className="favorite">
-            <span role="img" aria-label="heart">{this.state.favorite ? "♥️" : "♡"}</span>
+            <span role="img" aria-label="heart">{favorite ? "♥️" : "♡"}</span>
           </button>
         </div>
         <div className="info">
@@ -39,8 +40,8 @@ class ListingCard extends React.Component {
           <strong>${price}</strong>/month
         </div>
         <div className="reviews">
-          <button onClick={this.toggleReviewForm}>{this.state.showReviewForm ? "Hide" : "Show"} Review Form</button>
-          {this.state.showReviewForm && <ListingReview />}
+          <button onClick={this.toggleReviewForm}>{showForm ? "Hide" : "Show"} Review Form</button>
+          {showForm && <ListingReview />}
         </div>
       </div>
     )
