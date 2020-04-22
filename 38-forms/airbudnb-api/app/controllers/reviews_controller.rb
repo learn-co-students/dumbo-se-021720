@@ -1,7 +1,7 @@
 class ReviewsController < ApplicationController
 
   def create
-    listing = Listing.find_by(id: params[:id])
+    listing = Listing.find_by(id: params[:listing_id])
     listing.reviews.create(
       username: params[:username],
       comment: params[:comment],

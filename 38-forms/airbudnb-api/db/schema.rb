@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2020_04_22_115556) do
     t.string "image"
     t.string "name"
     t.string "city"
-    t.decimal "price"
+    t.integer "price"
     t.boolean "favorite"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

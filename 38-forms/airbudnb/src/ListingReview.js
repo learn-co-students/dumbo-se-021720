@@ -1,7 +1,6 @@
 import React from 'react'
 
 class ListingReview extends React.Component {
-
   render() {
     return (
       <form>

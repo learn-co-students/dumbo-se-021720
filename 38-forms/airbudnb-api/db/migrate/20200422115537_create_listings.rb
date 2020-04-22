@@ -4,7 +4,7 @@ class CreateListings < ActiveRecord::Migration[6.0]
       t.string :image
       t.string :name
       t.string :city
-      t.decimal :price
+      t.integer :price
       t.boolean :favorite
 
       t.timestamps
