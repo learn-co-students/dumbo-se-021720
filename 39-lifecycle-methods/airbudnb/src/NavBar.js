@@ -17,7 +17,7 @@ class NavBar extends React.Component {
   render() {
     return (
       <header>
-        <div className="logo"></div>
+        <div className="logo" />
         <form className="search" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Search cities..." value={this.state.searchTerm} onChange={this.handleChange} />
           <input type="submit" value="Search" />

@@ -2,6 +2,7 @@ import React from 'react'
 import ListingCard from './ListingCard'
 import FilterBar from './FilterBar'
 import Pager from './Pager'
+import LoadingSpinner from './LoadingSpinner'
 
 class ListingsContainer extends React.Component {
 
@@ -14,6 +15,19 @@ class ListingsContainer extends React.Component {
   }
 
   componentDidMount() {
+    this.fetchListings()
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log("update", this.props, prevProps)
+
+    if (this.props.searchTerm !== prevProps.searchTerm) {
+      this.setState({ loaded: false })
+      this.fetchListings()
+    }
+  }
+
+  fetchListings() {
     fetch(`http://localhost:3000/listings/search?city=${this.props.searchTerm}`)
       .then(r => r.json())
       .then(listings => {
@@ -22,23 +36,6 @@ class ListingsContainer extends React.Component {
           loaded: true
         })
       })
-  }
-
-  componentDidUpdate(prevProps) {
-    console.log("update", this.props, prevProps)
-
-    if (this.props.searchTerm !== prevProps.searchTerm) {
-      this.setState({ loaded: false })
-
-      fetch(`http://localhost:3000/listings/search?city=${this.props.searchTerm}`)
-        .then(r => r.json())
-        .then(listings => {
-          this.setState({
-            listings: listings,
-            loaded: true
-          })
-        })
-    }
   }
 
   // Event handlers
@@ -54,7 +51,6 @@ class ListingsContainer extends React.Component {
   }
 
   handleUpdateListing = updatedListing => {
-    // update ONLY the one object in our listings in state that has changed
     const updatedListings = this.state.listings.map(listing => {
       if (listing.id === updatedListing.id) {
         return updatedListing
@@ -67,10 +63,6 @@ class ListingsContainer extends React.Component {
   }
 
   getFilteredListings() {
-    // filter based on search term (from props)
-    // let listingsToDisplay = this.state.listings.filter(listing => {
-    //   return listing.city.toLowerCase().includes(this.props.searchTerm.toLowerCase())
-    // })
     let listingsToDisplay = this.state.listings
     // filter based on fourStarRating filter (from state)
     if (this.state.fourStarOnly) {
@@ -88,17 +80,14 @@ class ListingsContainer extends React.Component {
   render() {
     console.log("in ListingsContainer, state:", this.state)
     if (!this.state.loaded) {
-      return (
-        <h1>Loading...</h1>
-      )
+      return <LoadingSpinner />
     }
-
 
     const filteredListings = this.getFilteredListings()
     const listingsToRender = this.getListingCards(filteredListings)
 
     return (
-      <main>
+      <>
         <FilterBar handleFourStarFilter={this.handleFourStarFilter} />
         <section className="listings">
           {listingsToRender}
@@ -108,7 +97,7 @@ class ListingsContainer extends React.Component {
           total={filteredListings.length}
           handleUpdateIndex={this.handleUpdateIndex}
         />
-      </main>
+      </>
     )
   }
 }

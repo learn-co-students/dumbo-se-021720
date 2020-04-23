@@ -59,7 +59,7 @@ header {
 header .logo {
   width: 60px;
   height: 60px;
-  background-image: url(./logo.png);
+  background-image: url(./images/logo.png);
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
@@ -235,6 +235,31 @@ main {
   margin-bottom: 8rem;
 }
 
+/* Spinner */
+.spinner-container {
+  width: 100%;
+  margin: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  background: url(./images/bball.png);
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
 /* responsiveness */
 @media (min-width: 0) and (max-width: 699px) {
   .card {

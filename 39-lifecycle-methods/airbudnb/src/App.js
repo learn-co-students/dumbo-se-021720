@@ -17,8 +17,10 @@ class App extends React.Component {
     const { searchTerm } = this.state
     return (
       <>
-        <NavBar searchTerm={searchTerm} handleUpdateSearch={this.handleUpdateSearch} />
-        <ListingsContainer searchTerm={searchTerm} />
+        <NavBar handleUpdateSearch={this.handleUpdateSearch} />
+        <main>
+          <ListingsContainer searchTerm={searchTerm} />
+        </main>
       </>
     );
   }
