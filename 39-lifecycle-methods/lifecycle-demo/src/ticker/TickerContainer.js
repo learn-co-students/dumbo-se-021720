@@ -3,45 +3,20 @@ import Ticker from './Ticker'
 
 class TickerContainer extends React.Component {
   state = {
-    number: 0,
-    interval: null,
-    color: "white"
+    number: 0
   }
 
-  componentDidMount() {
-    this.startInterval()
-  }
+  /*
+    What do we need?
 
-  componentDidUpdate(_, prevState) {
-    if (this.state.number !== prevState.number) {
-      const color = this.state.number > prevState.number ? "green" : "red"
-      this.setState({ color })
-    }
-  }
+    componentDidMount()
 
-  startInterval() {
-    const interval = setInterval(this.updateTickerValue, 1000)
-    this.setState({ interval })
-  }
+    componentDidUpdate()
 
-  stopInterval() {
-    clearInterval(this.state.interval)
-    this.setState({ interval: null })
-  }
+    componentWillUnmount()
 
-  toggleInterval = () => {
-    if (this.state.interval) {
-      this.stopInterval()
-    } else {
-      this.startInterval()
-    }
-  }
-
-  updateTickerValue = () => {
-    this.setState({
-      number: Math.ceil(Math.random() * 100)
-    })
-  }
+    none of the above!
+  */
 
   // When our app loads, get a new random number from 1 - 100 every second
   // On button click, stop/start the interval
@@ -52,8 +27,8 @@ class TickerContainer extends React.Component {
   render() {
     return (
       <div className="box">
-        <button onClick={this.toggleInterval}>{this.state.interval ? "Stop" : "Start"} Ticker</button>
-        <Ticker number={this.state.number} color={this.state.color} />
+        <button>Stop/Start Ticker</button>
+        <Ticker number={this.state.number} />
       </div>
     )
   }
