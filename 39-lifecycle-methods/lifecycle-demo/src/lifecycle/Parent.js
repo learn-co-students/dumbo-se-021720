@@ -3,8 +3,25 @@ import Child from './Child'
 import { getLoggingInfo } from '../utils/logger';
 
 class Parent extends React.Component {
+  constructor() {
+    super()
+    console.log(...getLoggingInfo(this))
+  }
+
   state = {
     clicked: true
+  }
+
+  componentDidMount() {
+    console.log(...getLoggingInfo(this))
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    console.log(...getLoggingInfo(this), prevProps, prevState)
+  }
+
+  componentWillUnmount() {
+    console.log(...getLoggingInfo(this))
   }
 
   toggle = () => {
@@ -19,7 +36,7 @@ class Parent extends React.Component {
       <div className="box">
         <button onClick={this.toggle}>Toggle</button>
         <p>Parent</p>
-        <Child name="child" />
+        {this.state.clicked ? <Child name="child" /> : null}
       </div>
     );
 

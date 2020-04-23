@@ -9,7 +9,36 @@ class ListingsContainer extends React.Component {
   state = {
     fourStarOnly: false,
     startIndex: 0,
-    listings: []
+    listings: [],
+    loaded: false
+  }
+
+  componentDidMount() {
+    fetch(`http://localhost:3000/listings/search?city=${this.props.searchTerm}`)
+      .then(r => r.json())
+      .then(listings => {
+        this.setState({
+          listings: listings,
+          loaded: true
+        })
+      })
+  }
+
+  componentDidUpdate(prevProps) {
+    console.log("update", this.props, prevProps)
+
+    if (this.props.searchTerm !== prevProps.searchTerm) {
+      this.setState({ loaded: false })
+
+      fetch(`http://localhost:3000/listings/search?city=${this.props.searchTerm}`)
+        .then(r => r.json())
+        .then(listings => {
+          this.setState({
+            listings: listings,
+            loaded: true
+          })
+        })
+    }
   }
 
   // Event handlers
@@ -18,14 +47,6 @@ class ListingsContainer extends React.Component {
       fourStarOnly: !this.state.fourStarOnly,
       startIndex: 0
     })
-  }
-
-  handleFetch = () => {
-    fetch("http://localhost:3000/listings")
-      .then(r => r.json())
-      .then(listings => {
-        this.setState({ listings: listings })
-      })
   }
 
   handleUpdateIndex = startIndex => {
@@ -47,9 +68,10 @@ class ListingsContainer extends React.Component {
 
   getFilteredListings() {
     // filter based on search term (from props)
-    let listingsToDisplay = this.state.listings.filter(listing => {
-      return listing.city.toLowerCase().includes(this.props.searchTerm.toLowerCase())
-    })
+    // let listingsToDisplay = this.state.listings.filter(listing => {
+    //   return listing.city.toLowerCase().includes(this.props.searchTerm.toLowerCase())
+    // })
+    let listingsToDisplay = this.state.listings
     // filter based on fourStarRating filter (from state)
     if (this.state.fourStarOnly) {
       listingsToDisplay = listingsToDisplay.filter(listing => listing.rating >= 4)
@@ -65,15 +87,18 @@ class ListingsContainer extends React.Component {
 
   render() {
     console.log("in ListingsContainer, state:", this.state)
+    if (!this.state.loaded) {
+      return (
+        <h1>Loading...</h1>
+      )
+    }
+
 
     const filteredListings = this.getFilteredListings()
     const listingsToRender = this.getListingCards(filteredListings)
 
     return (
       <main>
-        <h1>
-          Show Me Some Listings: <button onClick={this.handleFetch}>Show</button>
-        </h1>
         <FilterBar handleFourStarFilter={this.handleFourStarFilter} />
         <section className="listings">
           {listingsToRender}

@@ -7,8 +7,8 @@ class App extends React.Component {
     searchTerm: ""
   }
 
-  handleUpdateSearch = event => {
-    this.setState({ searchTerm: event.target.value })
+  handleUpdateSearch = searchTerm => {
+    this.setState({ searchTerm: searchTerm })
   }
 
   render() {

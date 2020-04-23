@@ -12,4 +12,14 @@ class LifeCycleApp extends React.Component {
   }
 }
 
-export default LifeCycleApp; 
+export default LifeCycleApp;
+
+// parent contructor
+// parent render
+// child constructor
+// child render
+// grandchild constructor
+// grandchild render
+// grandchild mounts
+// child mounts
+// parent mounts

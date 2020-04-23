@@ -1,14 +1,23 @@
 import React from 'react';
 import './App.css'
-import LifeCycleApp from './lifecycle/LifeCycleApp'
-// import TickerContainer from './ticker/TickerContainer'
+// import LifeCycleApp from './lifecycle/LifeCycleApp'
+import TickerContainer from './ticker/TickerContainer'
 
-function App() {
-  return (
-    <div className="App">
-      <LifeCycleApp />
-    </div>
-  );
+class App extends React.Component {
+  state = {
+    showTicker: true
+  }
+
+
+
+  render() {
+    return (
+      <div className="App">
+        <button onClick={() => this.setState({ showTicker: false })}>hide</button>
+        {this.state.showTicker && <TickerContainer />}
+      </div>
+    );
+  }
 }
 
 export default App;
