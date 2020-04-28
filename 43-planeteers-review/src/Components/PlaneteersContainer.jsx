@@ -1,18 +1,21 @@
 import React from 'react';
 import Planeteer from './Planeteer'
 
+
 const PlaneteersContainer = (props) => {
 
-  let arrayOfComponents = [...props.planeteers]
+  let filteredArray = props.planeteers
     .filter(planeteer => planeteer.name.toLowerCase().includes(props.searchTerm) || planeteer.bio.toLowerCase().includes(props.searchTerm))
-    .sort((planeteerA, planeteerB) => {
-      if (props.sortedByAge) {
-        return planeteerA.born - planeteerB.born
-      } else {
-        return 0
-      }
+    
+  let sortedArray = filteredArray
+
+  if (props.sortedByAge) {
+    sortedArray = filteredArray.sort((planeteerA, planeteerB) => {
+      return planeteerA.born - planeteerB.born
     })
-    .map(planeteer => {
+  }
+
+  let renderArray = sortedArray.map(planeteer => {
       return <Planeteer 
         key={planeteer.id} 
         planeteer={planeteer} 
@@ -23,7 +26,7 @@ const PlaneteersContainer = (props) => {
   return (
     <ul className="cards">
       {
-        arrayOfComponents
+        renderArray
       }
     </ul>
   )
