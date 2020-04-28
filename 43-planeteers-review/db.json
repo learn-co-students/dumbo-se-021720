@@ -1,5 +1,5 @@
 {
-  "planeteers":[
+  "planeteers": [
     {
       "id": 1,
       "name": "Xiuhtezcatl Martinez",
@@ -71,7 +71,7 @@
       "twitter": " "
     },
     {
-      "id":8,
+      "id": 8,
       "name": "Alexandria Villaseñor",
       "fromUSA": true,
       "born": 2005,
@@ -79,6 +79,36 @@
       "quote": "Two years ago I began to research the connection between climate change and wildfires and learned that wildfires are burning longer and hotter because of climate change. I also saw Greta’s COP24 speech, and I thought that world leaders would take action to reduce greenhouse gas emissions. When they didn't, I was upset, and it was on the last day of COP24, December 14, that I began my strike at the U.N.",
       "pictureUrl": "https://www.abc.net.au/news/image/11556402-3x2-940x627.jpg",
       "twitter": "@AlexandriaV2005"
+    },
+    {
+      "name": "Haven Coleman",
+      "fromUSA": true,
+      "born": 2006,
+      "bio": "Sloths were the main motivator for Haven Coleman’s dive into environmental activism. At just 13, she is already a co-founder and co-executive director of the US Youth Climate Strike. Despite the backlash she has received from classmates, politicians, and even strangers, Haven remains determined to continue her activism and bring about meaningful change. It was a fifth grade lesson about deforestation was the catalyst for her commitment to ending climate change. Having participated in climate work since she was 10, Coleman’s transition to founding her own climate-focused organization was only natural.",
+      "quote": "I  was so mad that we were making the world so sick and hurting so many people, killing so many people. I knew that it was not about saving the sloths, it was about saving all the organisms that live on it.",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/haven.gif",
+      "twitter": "@havenruthie",
+      "id": 9
+    },
+    {
+      "name": "Thomas Tonatiuh Lopez",
+      "fromUSA": true,
+      "born": 1995,
+      "bio": "Thomas Tonatiuh Lopez, 24, was arrested at Standing Rock while praying. It was traumatic but helped him find his place as a leader, in the tradition of his father who is a Sundance Chief. Both of Lopez's parents were Indigenous civil rights leaders in the 1970s, both taking part in the occupation of Alcatraz in 1969 and Wounded Knee in 1973, which called attention to dismal living conditions and civil rights abuses that Native Americans continued to endure. He himself has been an LGBTQ rights advocate. He identifies as Chicano, with roots in the Mexica people of Mexico, and Sicangu Lakota Oyate from South Dakota, though he grew up in Denver. He talked about the inclusive community he found at Standing Rock that compelled him to join the camp for three months instead of his initial one-day plan.",
+      "quote": "Even though I had a lot of pain come out of the experience of the arrest, it inspired a lot of people. And those are the things sometimes you have to do as a leader. You have to take that pain for our people so that we can inspire others to stand up.",
+      "pictureUrl": "https://s.abcnews.com/images/US/abc-thomaslivingportrait-jc-170224_16x9_992.jpg",
+      "twitter": "@tomvslopez",
+      "id": 10
+    },
+    {
+      "name": "Haven Coleman",
+      "fromUSA": true,
+      "born": 2006,
+      "bio": "Sloths were the main motivator for Haven Coleman’s dive into environmental activism. At just 13, she is already a co-founder and co-executive director of the US Youth Climate Strike. Despite the backlash she has received from classmates, politicians, and even strangers, Haven remains determined to continue her activism and bring about meaningful change. It was a fifth grade lesson about deforestation was the catalyst for her commitment to ending climate change. Having participated in climate work since she was 10, Coleman’s transition to founding her own climate-focused organization was only natural.",
+      "quote": "I  was so mad that we were making the world so sick and hurting so many people, killing so many people. I knew that it was not about saving the sloths, it was about saving all the organisms that live on it.",
+      "pictureUrl": "https://160g7a3snajg2i1r662yjd5r-wpengine.netdna-ssl.com/wp-content/uploads/2019/12/haven.gif",
+      "twitter": "@havenruthie",
+      "id": 11
     }
   ]
 }

@@ -44,7 +44,10 @@ If you are finished with these three deliverables, commit your code.
 
 4. For the RandomButton, in addition to rendering the random Planeteer, have the new Planeteer persist in the backend. Because `json-server` does not have any validations, if you accidentally create a Planeteer object whose structure does not match the ones who were already in the database, you can simply erase the object in the file. Also, since we are getting a random Planeteer when we click on the button, it is fine to have duplicates in the database, as long as they have the same object structure, but different IDs.
 
-5. Build the functionality to remove a Planeteer from the page. You will need to first put a button on the Planeteer component. When that delete button is clicked, you will need to remove the Planeteer component from the page. After you have that functionality, consider making it persist in your `json-server`. If you delete all the Planeteers when you are building this feature out, you can copy and paste the data from the `db-copy.json` into the `db.json` file.
+5. 
+Build the functionality to remove a Planeteer from the page. You will need to first put a button on the Planeteer component. When that delete button is clicked, you will need to remove the Planeteer component from the page. 
+
+After you have that functionality, consider making it persist in your `json-server`. If you delete all the Planeteers when you are building this feature out, you can copy and paste the data from the `db-copy.json` into the `db.json` file.
 
 6. In the SearchBar component, add a checkbox:
 
