@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { Component } from 'react'
 import ListingReview from './ListingReview'
 
-class ListingCard extends React.Component {
+class ListingCard extends Component {
 
   state = {
     favorite: false,
@@ -21,6 +21,9 @@ class ListingCard extends React.Component {
   }
 
   render() {
+    console.log("ListingCard render", this.props.id)
+
+
     const { handleUpdateListing } = this.props
     const { id, image, name, city, price, rating } = this.props.listing
     const { favorite, showForm } = this.state

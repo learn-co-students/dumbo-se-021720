@@ -72,7 +72,7 @@ class ListingsContainer extends React.Component {
   getListingCards(listings) {
     return listings
       .slice(this.state.startIndex, this.state.startIndex + 15)
-      .map(listing => <ListingCard key={listing.id} listing={listing} handleUpdateListing={this.handleUpdateListing} />)
+      .map(listing => <ListingCard key={listing.id} id={listing.id} listing={listing} handleUpdateListing={this.handleUpdateListing} />)
   }
 
   render() {
