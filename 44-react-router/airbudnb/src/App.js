@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar'
 import ListingsContainer from './ListingsContainer';
+import ListingPage from './ListingPage';
 
 class App extends React.Component {
   state = {
@@ -19,7 +20,8 @@ class App extends React.Component {
       <>
         <NavBar handleUpdateSearch={this.handleUpdateSearch} />
         <main>
-          <ListingsContainer searchTerm={searchTerm} />
+          {/* <ListingsContainer searchTerm={searchTerm} /> */}
+          <ListingPage />
         </main>
       </>
     );

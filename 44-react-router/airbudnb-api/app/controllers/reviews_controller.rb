@@ -8,7 +8,7 @@ class ReviewsController < ApplicationController
       rating: params[:rating],
     )
 
-    render json: listing
+    render json: listing, serializer: ListingDetailSerializer
   end
 
 end

@@ -50,18 +50,6 @@ class ListingsContainer extends React.Component {
     this.setState({ startIndex: startIndex })
   }
 
-  handleUpdateListing = updatedListing => {
-    const updatedListings = this.state.listings.map(listing => {
-      if (listing.id === updatedListing.id) {
-        return updatedListing
-      } else {
-        return listing
-      }
-    })
-
-    this.setState({ listings: updatedListings })
-  }
-
   getFilteredListings() {
     let listingsToDisplay = this.state.listings
     // filter based on fourStarRating filter (from state)
@@ -74,7 +62,7 @@ class ListingsContainer extends React.Component {
   getListingCards(listings) {
     return listings
       .slice(this.state.startIndex, this.state.startIndex + 15)
-      .map(listing => <ListingCard key={listing.id} listing={listing} handleUpdateListing={this.handleUpdateListing} />)
+      .map(listing => <ListingCard key={listing.id} listing={listing} />)
   }
 
   render() {

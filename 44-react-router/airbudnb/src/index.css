@@ -1,6 +1,7 @@
 :root {
   --orange: #FDBD33;
   --magenta: #FF5A5F;
+  --gray: #ccc;
 }
 
 /* layout */
@@ -12,20 +13,22 @@
 
 body {
   font-size: 16px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
 }
 
 h1, h2, h3, h4 {
   margin: 0.5em 0;
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
 }
 
 button {
   font-size: 14px;
-  font-weight: bold;
+  font-weight: 500;
   background: none;
   border: none;
   border-radius: 1rem;
@@ -87,18 +90,18 @@ header .search input[type="text"] {
   width: 80%;
   padding: 0.25rem;
   margin: 0 0.25rem;
-  font-weight: bold;
+  font-weight: 500;
   border-bottom: 1px solid transparent;
 }
 
 header .search input[type="text"]:focus {
   outline: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 1px solid var(--gray);
 }
 
 header .search input[type="submit"] {
   flex-grow: 1;
-  font-weight: bold;
+  font-weight: 500;
   background-color: var(--magenta);
   padding: 0.5rem;
   border-radius: 6px;
@@ -126,6 +129,97 @@ main {
   width: 100%;
   align-items: flex-start;
 }
+
+/* ListingPage */
+.detail .image {
+  border-radius: 4px;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.detail .info {
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+  padding: 1rem 0;
+}
+
+.detail .reviews {
+  border-bottom: 1px solid var(--gray);
+}
+
+.detail .review {
+  margin: 1rem 0;
+}
+
+.detail .review h5 {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.detail .review .date {
+  font-weight: 200;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* ReviewForm */
+.review-form {
+  margin: 1rem 0;
+  max-width: 600px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 0px 8px;
+  border-radius: 10px;
+}
+
+.review-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form form label {
+  font-size: 0.8rem;
+}
+
+.review-form form input, 
+.review-form form textarea, 
+.review-form form select {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem;
+  font-weight: bold;
+  border: none;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 2px;
+}
+
+.review-form form input:focus, 
+.review-form form textarea:focus, 
+.review-form form select:focus {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.review-form form input[type="submit"] {
+  width: 30%;
+  font-weight: 500;
+  background-color: var(--magenta);
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.review-form form input[type="submit"]:focus,
+.review-form form input[type="submit"]:active {
+  outline: none;
+  transform: scale(0.95);
+}
+
 
 /* ListingsCard */
 .card {
@@ -181,51 +275,6 @@ main {
 
 .card .title {
   margin-bottom: 0.5rem;
-}
-
-.card .reviews button {
-  font-weight: normal;
-  margin: 1rem 0;
-  padding: 0;
-  border: none;
-  box-shadow: none;
-  text-decoration: underline;
-  line-height: 1.25em;
-}
-
-.card .reviews button:hover {
-  box-shadow: none;
-}
-
-.card .reviews form {
-  display: flex;
-  flex-direction: column;
-}
-
-.card .reviews form label {
-  font-size: 0.8rem;
-}
-
-.card .reviews form input, 
-.card .reviews form textarea, 
-.card .reviews form select {
-  margin-top: 0.25rem;
-  margin-bottom: 0.75rem;
-  padding: 0.25rem;
-  font-weight: bold;
-  border: none;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 2px;
-}
-
-.card .reviews form input:focus, 
-.card .reviews form textarea:focus, 
-.card .reviews form select:focus {
-  outline: none;
-  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
-}
-
-.card .reviews form input[type="submit"] {
-  width: 30%;
 }
 
 /* Pager */

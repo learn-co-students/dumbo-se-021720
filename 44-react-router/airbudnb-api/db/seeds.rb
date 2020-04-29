@@ -51,17 +51,46 @@ images = [
 ]
 
 cities = [
-  "New York",
-  "Atlanta"
+  {
+    name: "New York",
+    lat: 40.7128,
+    lng: -74.0060
+  },
+  {
+    name: "Atlanta",
+    lat: 33.7490,
+    lng: -84.3880
+  }
 ]
 
+# https://gis.stackexchange.com/questions/25877/generating-random-locations-nearby
+def random_lat_lng(x0, y0)
+  r = 1 / 111.32
+  u = rand
+  v = rand
+
+  w = r * Math.sqrt(u)
+  t = 2 * Math::PI * v
+  x = w * Math.cos(t) 
+  y = w * Math.sin(t)
+
+  x = x / Math.cos(y0)
+
+  [x + x0, y + y0]
+end
+
 100.times do
+  city = cities.sample
+  lat_lng = random_lat_lng(city[:lat], city[:lng])
+
   listing = Listing.create(
     image: images.sample,
     name: "#{place_adjectives.sample} #{places.sample} in #{location_adjectives.sample} #{locations.sample}",
-    city: cities.sample,
+    city: city[:name],
     price: rand(10..100),
-    favorite: false
+    favorite: false,
+    latitude: lat_lng[0],
+    longitude: lat_lng[1]
   )
 
   rand(1..7).times do

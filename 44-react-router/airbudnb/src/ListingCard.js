@@ -1,11 +1,9 @@
 import React from 'react'
-import ListingReview from './ListingReview'
 
 class ListingCard extends React.Component {
 
   state = {
-    favorite: false,
-    showForm: false
+    favorite: false
   }
 
   toggleFavorite = () => {
@@ -14,16 +12,9 @@ class ListingCard extends React.Component {
     }))
   }
 
-  toggleReviewForm = () => {
-    this.setState(prevState => ({
-      showForm: !prevState.showForm
-    }))
-  }
-
   render() {
-    const { handleUpdateListing } = this.props
-    const { id, image, name, city, price, rating } = this.props.listing
-    const { favorite, showForm } = this.state
+    const { image, name, city, price, rating } = this.props.listing
+    const { favorite } = this.state
 
     return (
       <div className="card">
@@ -39,10 +30,6 @@ class ListingCard extends React.Component {
         <h4 className="title">{name}</h4>
         <div className="price">
           <strong>${price}</strong>/month
-        </div>
-        <div className="reviews">
-          <button onClick={this.toggleReviewForm}>{showForm ? "Hide" : "Show"} Review Form</button>
-          {showForm && <ListingReview listingId={id} handleUpdateListing={handleUpdateListing} />}
         </div>
       </div>
     )

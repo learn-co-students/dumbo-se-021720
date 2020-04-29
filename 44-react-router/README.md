@@ -13,6 +13,12 @@ React Router
 
 
 ## Lecture Notes
+Create separate pages for...
+- [ ] Listings Index
+- [ ] Listings Show
+- [ ] Login
+- [ ] Signup
+- [ ] (bonus) Listings Index with Search Params
 
 ## SPAs
 

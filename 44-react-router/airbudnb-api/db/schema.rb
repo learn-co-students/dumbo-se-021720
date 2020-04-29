@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_22_115556) do
+ActiveRecord::Schema.define(version: 2020_04_29_190736) do
 
   create_table "listings", force: :cascade do |t|
     t.string "image"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2020_04_22_115556) do
     t.boolean "favorite"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.decimal "latitude", precision: 10, scale: 6
+    t.decimal "longitude", precision: 10, scale: 6
   end
 
   create_table "reviews", force: :cascade do |t|
