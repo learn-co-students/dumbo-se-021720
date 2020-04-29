@@ -165,27 +165,27 @@ main {
   color: #888;
 }
 
-/* ReviewForm */
-.review-form {
-  margin: 1rem 0;
-  max-width: 600px;
+/* Forms */
+.form-container {
+  margin: 1rem auto;
+  max-width: 500px;
   padding: 1rem;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 0px 8px;
   border-radius: 10px;
 }
 
-.review-form form {
+.form-container form {
   display: flex;
   flex-direction: column;
 }
 
-.review-form form label {
+.form-container form label {
   font-size: 0.8rem;
 }
 
-.review-form form input, 
-.review-form form textarea, 
-.review-form form select {
+.form-container form input, 
+.form-container form textarea, 
+.form-container form select {
   margin-top: 0.25rem;
   margin-bottom: 0.75rem;
   padding: 0.25rem;
@@ -195,14 +195,14 @@ main {
   box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 2px;
 }
 
-.review-form form input:focus, 
-.review-form form textarea:focus, 
-.review-form form select:focus {
+.form-container form input:focus, 
+.form-container form textarea:focus, 
+.form-container form select:focus {
   outline: none;
   box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
 }
 
-.review-form form input[type="submit"] {
+.form-container form input[type="submit"] {
   width: 30%;
   font-weight: 500;
   background-color: var(--magenta);
@@ -214,8 +214,8 @@ main {
   transition: all 0.1s;
 }
 
-.review-form form input[type="submit"]:focus,
-.review-form form input[type="submit"]:active {
+.form-container form input[type="submit"]:focus,
+.form-container form input[type="submit"]:active {
   outline: none;
   transform: scale(0.95);
 }

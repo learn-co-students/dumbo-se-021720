@@ -2,6 +2,8 @@ import React from 'react';
 import NavBar from './NavBar'
 import ListingsContainer from './ListingsContainer';
 import ListingPage from './ListingPage';
+import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
 
 class App extends React.Component {
   state = {
@@ -21,6 +23,8 @@ class App extends React.Component {
         <NavBar handleUpdateSearch={this.handleUpdateSearch} />
         <main>
           {/* <ListingsContainer searchTerm={searchTerm} /> */}
+          {/* <ListingPage /> */}
+          {/* <SignupForm /> */}
           <ListingPage />
         </main>
       </>

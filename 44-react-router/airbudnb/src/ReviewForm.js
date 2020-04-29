@@ -35,7 +35,7 @@ class ReviewForm extends React.Component {
 
   render() {
     return (
-      <div className="review-form">
+      <div className="form-container">
         <h4>Leave a Review</h4>
         <form onSubmit={this.handleSubmit}>
           <label>Username:</label>
