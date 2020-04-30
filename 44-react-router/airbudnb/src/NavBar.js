@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 class NavBar extends React.Component {
   state = {
@@ -17,14 +18,20 @@ class NavBar extends React.Component {
   render() {
     return (
       <header>
-        <div className="logo" />
+        <Link to="/listings">
+          <div className="logo" />
+        </Link>
         <form className="search" onSubmit={this.handleSubmit}>
           <input type="text" placeholder="Search cities..." value={this.state.searchTerm} onChange={this.handleChange} />
           <input type="submit" value="Search" />
         </form>
         <div className="actions">
-          <button>Login</button>
-          <button>Sign Up</button>
+          <Link to="/login">
+            <button>Login</button>
+          </Link>
+          <Link to="/signup">
+            <button>Sign Up</button>
+          </Link>
         </div>
       </header>
     )

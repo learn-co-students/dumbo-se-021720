@@ -24,8 +24,18 @@ React Router
 ## SPAs
 
 ### Benefits
+- faster! not waiting for that full page refresh
+- less complicated to write: don't have to write routes
+- virtual DOM makes updates v v v fast
 
 ### Challenges 
+- routes give us more convention to follow, help organize our code (and also user experience)
+- async is hard: dealing with loading state, errors
+- need to understand your component tree really well
+- we no longer can use URLs to represent the state of our application
+REST - REprensentational State Transfer
+
+
 
 
 

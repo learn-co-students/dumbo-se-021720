@@ -11,7 +11,8 @@ class ListingPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/listings/1`)
+    console.log(this.props.match.params.id)
+    fetch(`http://localhost:3000/listings/${this.props.match.params.id}`)
       .then(r => r.json())
       .then(listing => {
         this.setState({
@@ -26,6 +27,7 @@ class ListingPage extends React.Component {
   }
 
   render() {
+    console.log(this.props)
     if (!this.state.loaded) {
       return <LoadingSpinner />
     }
