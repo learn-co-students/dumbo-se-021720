@@ -34,16 +34,17 @@ class ReviewForm extends React.Component {
   }
 
   render() {
+    const { username, comment, rating } = this.state
     return (
       <div className="form-container">
         <h4>Leave a Review</h4>
         <form onSubmit={this.handleSubmit}>
           <label>Username:</label>
-          <input type="text" name="username" onChange={this.handleInputChange} value={this.state.username} />
+          <input type="text" name="username" onChange={this.handleInputChange} value={username} />
           <label>Comment:</label>
-          <textarea name="comment" onChange={this.handleInputChange} value={this.state.comment} />
+          <textarea name="comment" onChange={this.handleInputChange} value={comment} />
           <label>Rating:</label>
-          <select name="rating" onChange={this.handleInputChange} value={this.state.rating} >
+          <select name="rating" onChange={this.handleInputChange} value={rating} >
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>

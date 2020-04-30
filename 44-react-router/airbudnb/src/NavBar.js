@@ -5,12 +5,12 @@ class NavBar extends React.Component {
     searchTerm: ""
   }
 
-  handleChange = e => {
-    this.setState({ searchTerm: e.target.value })
+  handleChange = event => {
+    this.setState({ searchTerm: event.target.value })
   }
 
-  handleSubmit = e => {
-    e.preventDefault()
+  handleSubmit = event => {
+    event.preventDefault()
     this.props.handleUpdateSearch(this.state.searchTerm)
   }
 

@@ -1,17 +1,14 @@
 import React from 'react'
 
-const initialState = {
-  username: "",
-  password: ""
-}
-
 class LoginForm extends React.Component {
-  state = initialState
+  state = {
+    username: "",
+    password: ""
+  }
 
   handleInputChange = event => {
-    const inputName = event.target.name
     this.setState({
-      [inputName]: event.target.value
+      [event.target.name]: event.target.value
     })
   }
 
@@ -21,13 +18,15 @@ class LoginForm extends React.Component {
   }
 
   render() {
+    const { username, password } = this.state
     return (
       <div className="form-container">
+        <h3>Sign in to your account</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Username:</label>
-          <input type="text" name="username" onChange={this.handleInputChange} value={this.state.username} />
+          <input type="text" name="username" onChange={this.handleInputChange} value={username} />
           <label>Password:</label>
-          <input type="password" name="password" onChange={this.handleInputChange} value={this.state.password} />
+          <input type="password" name="password" onChange={this.handleInputChange} value={password} />
           <input type="submit" value="Login" />
         </form>
       </div>

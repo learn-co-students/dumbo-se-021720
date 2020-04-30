@@ -7,25 +7,37 @@ import SignupForm from './SignupForm';
 
 class App extends React.Component {
   state = {
-    searchTerm: ""
+    searchTerm: "",
+    page: "listings"
   }
 
   handleUpdateSearch = searchTerm => {
     this.setState({ searchTerm: searchTerm })
   }
 
+  getPage() {
+    switch (this.state.page) {
+      case "listings":
+        return <ListingsContainer searchTerm={this.state.searchTerm} />
+      case "detail":
+        return <ListingPage />
+      case "login":
+        return <LoginForm />
+      case "signup":
+        return <SignupForm />
+      default:
+        return <h1>404</h1>
+    }
+  }
+
   render() {
     console.log("in App, state:", this.state)
 
-    const { searchTerm } = this.state
     return (
       <>
         <NavBar handleUpdateSearch={this.handleUpdateSearch} />
         <main>
-          {/* <ListingsContainer searchTerm={searchTerm} /> */}
-          {/* <ListingPage /> */}
-          {/* <SignupForm /> */}
-          <ListingPage />
+          {this.getPage()}
         </main>
       </>
     );

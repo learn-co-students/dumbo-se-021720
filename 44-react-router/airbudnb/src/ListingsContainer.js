@@ -19,8 +19,6 @@ class ListingsContainer extends React.Component {
   }
 
   componentDidUpdate(prevProps) {
-    console.log("update", this.props, prevProps)
-
     if (this.props.searchTerm !== prevProps.searchTerm) {
       this.setState({ loaded: false })
       this.fetchListings()
@@ -33,6 +31,7 @@ class ListingsContainer extends React.Component {
       .then(listings => {
         this.setState({
           listings: listings,
+          startIndex: 0,
           loaded: true
         })
       })
@@ -40,10 +39,10 @@ class ListingsContainer extends React.Component {
 
   // Event handlers
   handleFourStarFilter = () => {
-    this.setState({
-      fourStarOnly: !this.state.fourStarOnly,
+    this.setState(prevState => ({
+      fourStarOnly: !prevState.fourStarOnly,
       startIndex: 0
-    })
+    }))
   }
 
   handleUpdateIndex = startIndex => {
@@ -66,7 +65,6 @@ class ListingsContainer extends React.Component {
   }
 
   render() {
-    console.log("in ListingsContainer, state:", this.state)
     if (!this.state.loaded) {
       return <LoadingSpinner />
     }

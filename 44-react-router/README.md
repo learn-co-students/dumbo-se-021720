@@ -5,20 +5,21 @@ React Router
 
 - [ ] Create a multi-page SPA
 - [ ] Explain the advantages of using React Router
-- [ ] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Route`, `Switch`, `Link`, and `NavLink`
+- [ ] Utilize the most common `react-router` components to build a SPA: `BrowserRouter`, `Route`, `Switch`, and `Link`
+- [ ] Understand the difference between `Link` and `<a>` tag
 - [ ] Use `push` and `history` to navigate pages
-- [ ] Use hooks like `useHistory` to access the state of the router
 - [ ] Create dynamic routes and use `params`
 - [ ] Make the distinction between `state` being one _Single Source of Truth_ and `react-router` being another _Single Source of Truth_
 
 
-## Lecture Notes
-Create separate pages for...
-- [ ] Listings Index
-- [ ] Listings Show
-- [ ] Login
-- [ ] Signup
-- [ ] (bonus) Listings Index with Search Params
+## Routes
+
+- [ ] "/login"            - Login Form
+- [ ] "/signup"           - Signup Form
+- [ ] "/"                 - Home Page
+- [ ] "/listings"         - Listings Index
+- [ ] "/listings/:id      - Listings Show
+- [ ] "/listings/search"  - Listings Index with Search Params
 
 ## SPAs
 
@@ -26,9 +27,12 @@ Create separate pages for...
 
 ### Challenges 
 
-## Dynamic Routing from Rails
 
-### Component Notation vs Render Notation
+
+
+
+
+## Dynamic Routing from Rails
 
 ### Using React Router
 `npm install react-router-dom --save`
