@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class NavBar extends React.Component {
   state = {
@@ -12,6 +12,7 @@ class NavBar extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
+    console.log(this.props)
     this.props.handleUpdateSearch(this.state.searchTerm)
   }
 
@@ -38,4 +39,4 @@ class NavBar extends React.Component {
   }
 }
 
-export default NavBar
+export default withRouter(NavBar)
