@@ -14,10 +14,34 @@ class LoginForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    // TODO: when we get to auth, make this work
+    // create a user
+    fetch("http://localhost:3000/login", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      credentials: 'include',
+      body: JSON.stringify(this.state)
+    })
+      .then(r => {
+        return r.json()
+        // if (r.ok) {
+        //   return r.json()
+        // } else {
+        //   throw r
+        // }
+      })
+      .then(responseData => {
+        if (responseData.error) {
+          console.error(responseData)
+        } else {
+          // this is our redirect
+          this.props.history.push("/listings")
+          this.props.handleUpdateCurrentUser(responseData)
+        }
+      })
+    // .catch(err => console.error(err))
 
-    // this is our redirect
-    this.props.history.push("/listings")
   }
 
   render() {

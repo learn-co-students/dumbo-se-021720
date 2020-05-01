@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :users
+  post "/signup", to: "users#create"
+  post "/login", to: "auth#login"
+  get "/autologin", to: "auth#autologin"
+  post "/logout", to: "auth#logout"
+  
   get "/listings/search", to: "listings#search"
   resources :listings, only: [:index, :show] do
     resources :reviews, only: [:create]

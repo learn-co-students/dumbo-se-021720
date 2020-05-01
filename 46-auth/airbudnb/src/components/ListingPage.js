@@ -11,7 +11,6 @@ class ListingPage extends React.Component {
   }
 
   componentDidMount() {
-    console.log(this.props.match.params.id)
     fetch(`http://localhost:3000/listings/${this.props.match.params.id}`)
       .then(r => r.json())
       .then(listing => {

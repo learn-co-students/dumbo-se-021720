@@ -12,6 +12,15 @@
 - [ ] Leave a review as a user
 - [ ] What else?
 
+### If there's time
+- [ ] Localstorage attack demo
+
+## notes
+- Session - encrypted cookie
+- Bcrypt - encrypt passwords, and also check the encrypted password
+
+
+
 ## Notes
 
 Today we're going to take a look at using Rails sessions as a way of authenticating requests to our API from a separate frontend service. There are many different auth strategies out there, and they all come with some tradeoffs; this approach will hopefully feel similar to your experience learning Auth in Rails in Mod 2.
@@ -285,3 +294,6 @@ Play around with the sample app and drop some `byebug`s in your backend when the
   - this also shows how to enable CSRF protection for added security
 - [JWT Storage in Rails + React](https://www.thegreatcodeadventure.com/jwt-storage-in-rails-the-right-way/)
   - this advocates for using JWT tokens instead of Rails sessions as an auth mechanism, but it's a useful resource for seeing how to use HTTPOnly cookies
+- https://stormpath.com/blog/where-to-store-your-jwts-cookies-vs-html5-web-storage
+- https://stackoverflow.com/questions/35291573/csrf-protection-with-json-web-tokens/35347022#35347022
+- https://medium.com/@jcbaey/authentication-in-spa-reactjs-and-vuejs-the-right-way-e4a9ac5cd9a3

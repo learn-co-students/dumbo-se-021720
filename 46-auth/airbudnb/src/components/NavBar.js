@@ -6,6 +6,17 @@ class NavBar extends React.Component {
     searchTerm: ""
   }
 
+  handleLogout = () => {
+    fetch("http://localhost:3000/logout", {
+      method: "POST",
+      credentials: "include"
+    })
+      .then(r => r.json())
+      .then(() => {
+        this.props.handleUpdateCurrentUser(null)
+      })
+  }
+
   handleChange = event => {
     this.setState({ searchTerm: event.target.value })
   }
@@ -26,12 +37,21 @@ class NavBar extends React.Component {
           <input type="submit" value="Search" />
         </form>
         <div className="actions">
-          <Link to="/login">
-            <button>Login</button>
-          </Link>
-          <Link to="/signup">
-            <button>Sign Up</button>
-          </Link>
+          {this.props.currentUser ? (
+            <>
+              <h4>{this.props.currentUser.username}</h4>
+              <button onClick={this.handleLogout}>Logout</button>
+            </>
+          ) : (
+              <>
+                <Link to="/login">
+                  <button>Login</button>
+                </Link>
+                <Link to="/signup">
+                  <button>Sign Up</button>
+                </Link>
+              </>
+            )}
         </div>
       </header>
     )

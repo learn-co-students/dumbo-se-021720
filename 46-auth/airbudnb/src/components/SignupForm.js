@@ -15,7 +15,23 @@ class SignUpForm extends React.Component {
 
   handleSubmit = event => {
     event.preventDefault()
-    // TODO: when we get to auth, make this work
+    if (this.state.password === this.state.password_confirmation) {
+
+      // create a user
+      fetch("http://localhost:3000/signup", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(this.state)
+      })
+        .then(r => r.json())
+        .then(user => this.props.handleUpdateCurrentUser(user))
+
+    } else {
+      alert("passwords don't match")
+    }
+
   }
 
   render() {
