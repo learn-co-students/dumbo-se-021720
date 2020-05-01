@@ -1,0 +1,402 @@
+:root {
+  --orange: #FDBD33;
+  --magenta: #FF5A5F;
+  --gray: #ccc;
+}
+
+/* layout */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3, h4 {
+  margin: 0.5em 0;
+  font-weight: 600;
+}
+
+strong {
+  font-weight: 600;
+}
+
+button {
+  font-size: 14px;
+  font-weight: 500;
+  background: none;
+  border: none;
+  border-radius: 1rem;
+  padding: 0.75rem 1rem;
+  margin-left: 0.5rem;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 2px;
+  transition: all 0.2s;
+}
+
+button:focus,
+button:hover {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 4px;
+}
+
+button:active {
+  box-shadow: rgba(0, 0, 0, 0.18) 1px -2px 4px;
+}
+
+/* NavBar */
+header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 8rem;
+  box-shadow: 1px 1px 2px -1px rgba(0,0,0,0.75);
+}
+
+header .logo {
+  width: 60px;
+  height: 60px;
+  background-image: url(./images/logo.png);
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+header .search {
+  width: 25%;
+  border-radius: 10px;
+  padding: 0.5rem;
+  display: flex;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 2px;
+}
+
+header .search:hover,
+header .search:active {
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 4px;
+}
+
+header .search input {
+  border: none;
+  font-size: 14px;
+}
+
+header .search input[type="text"] {
+  width: 80%;
+  padding: 0.25rem;
+  margin: 0 0.25rem;
+  font-weight: 500;
+  border-bottom: 1px solid transparent;
+}
+
+header .search input[type="text"]:focus {
+  outline: none;
+  border-bottom: 1px solid var(--gray);
+}
+
+header .search input[type="submit"] {
+  flex-grow: 1;
+  font-weight: 500;
+  background-color: var(--magenta);
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+header .search input[type="submit"]:focus,
+header .search input[type="submit"]:active {
+  outline: none;
+  transform: scale(0.95);
+}
+
+/* layout */
+main {
+  padding: 1rem 8rem;
+}
+
+/* MapView */
+.map-listings {
+  display: flex;
+  width: 100%;
+}
+
+.map-listings .details {
+  flex: 1 1 auto;
+}
+
+.map-listings .map {
+  align-self: flex-start;
+  top: 0;
+  position: sticky;
+  width: 45%;
+}
+
+.map-listings .card {
+  flex-direction: row;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.map-listings .card .image {
+  flex-direction: row;
+  width: 20vw;
+  height: 15vw;
+  min-width: 200px;
+  min-height: 150px;
+  padding: 0;
+}
+
+.filters {
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+}
+
+/* ListingsContainer */
+.listings {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: flex-start;
+}
+
+/* ListingPage */
+.detail .image {
+  border-radius: 4px;
+  width: 100%;
+  height: 400px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.detail .info {
+  border-top: 1px solid var(--gray);
+  border-bottom: 1px solid var(--gray);
+  padding: 1rem 0;
+}
+
+.detail .reviews {
+  border-bottom: 1px solid var(--gray);
+}
+
+.detail .review {
+  margin: 1rem 0;
+}
+
+.detail .review h5 {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.detail .review .date {
+  font-weight: 200;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Forms */
+.form-container {
+  margin: 1rem auto;
+  max-width: 500px;
+  padding: 1rem;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 0px 8px;
+  border-radius: 10px;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container form label {
+  font-size: 0.8rem;
+}
+
+.form-container form input, 
+.form-container form textarea, 
+.form-container form select {
+  margin-top: 0.25rem;
+  margin-bottom: 0.75rem;
+  padding: 0.25rem;
+  font-weight: bold;
+  border: none;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 1px 2px;
+}
+
+.form-container form input:focus, 
+.form-container form textarea:focus, 
+.form-container form select:focus {
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+}
+
+.form-container form input[type="submit"] {
+  width: 30%;
+  font-weight: 500;
+  background-color: var(--magenta);
+  padding: 0.5rem;
+  border-radius: 6px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.form-container form input[type="submit"]:focus,
+.form-container form input[type="submit"]:active {
+  outline: none;
+  transform: scale(0.95);
+}
+
+/* Popup */
+.leaflet-popup .card {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  border-bottom: none;
+}
+
+.leaflet-popup .card .image {
+  width: 100%;
+  height: 100%;
+}
+
+/* ListingsCard */
+.card {
+	flex: 0 1 calc(20% - 1.5rem);
+  margin: 2rem 0.75rem 4rem;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.card .details {
+  margin-left: 1rem;
+}
+
+.card .image {
+  position: relative;
+  border-radius: 4px;
+  width: 100%;
+  height: 100%;
+  padding-top: 66.6667%;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+.card .favorite {
+  position: absolute;
+  cursor: pointer;
+  border-radius: 50%;
+  background-color: white;
+  color: var(--magenta);
+  margin: 0.5rem;
+  width: 40px;
+  height: 40px;
+  font-size: 1.25rem;
+  padding: 0;
+  top: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+}
+
+.card .favorite:hover {
+  opacity: 1;
+} 
+
+.card .info {
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+}
+
+.rating {
+  color: var(--magenta);
+}
+
+.card .title {
+  margin-bottom: 0.5rem;
+}
+
+/* Pager */
+.pager {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 8rem;
+}
+
+/* Spinner */
+.spinner-container {
+  width: 100%;
+  margin: 4rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.spinner {
+  background: url(./images/bball.png);
+  background-size: cover;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s infinite linear;
+}
+
+@keyframes spin {
+  from {
+    transform:rotate(0deg);
+  }
+  to {
+    transform:rotate(360deg);
+  }
+}
+/* responsiveness */
+@media (min-width: 0) and (max-width: 699px) {
+  .card {
+    flex: 0 1 100%;
+    margin: 1rem 0;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 899px) { 
+  .card {
+    flex: 0 1 calc(50% - 2rem);
+  }
+}
+
+@media (min-width: 900px) and (max-width: 1199px) {
+  .card {
+    flex: 0 1 calc(33% - 2rem);
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1500px) {
+  .card {
+    flex: 0 1 calc(25% - 2rem);
+  }
+}
+
+@media (max-width: 1200px) {
+  header,
+  main {
+    padding: 0.75rem 1rem;
+  }
+}
+

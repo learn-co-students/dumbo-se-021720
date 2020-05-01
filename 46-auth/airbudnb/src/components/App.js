@@ -1,0 +1,36 @@
+import React from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom'
+import NavBar from './NavBar'
+import ListingsContainer from './ListingsContainer';
+import ListingPage from './ListingPage';
+import LoginForm from './LoginForm';
+import SignupForm from './SignupForm';
+
+class App extends React.Component {
+
+  handleUpdateSearch = searchTerm => {
+    this.props.history.push(`/listings/search/${encodeURIComponent(searchTerm)}`)
+  }
+
+  render() {
+    return (
+      <>
+        <NavBar
+          handleUpdateSearch={this.handleUpdateSearch}
+        />
+        <main>
+          <Switch>
+            <Route exact path="/" render={() => <h1>Home</h1>} />
+            <Route path="/login" component={LoginForm} />
+            <Route path="/signup" component={SignupForm} />
+            <Route path="/listings/search/:city" render={routeProps => <ListingsContainer {...routeProps} />} />
+            <Route path="/listings/:id" render={routeProps => <ListingPage {...routeProps} />} />
+            <Route exact path="/listings" render={routeProps => <ListingsContainer {...routeProps} />} />
+          </Switch>
+        </main>
+      </>
+    );
+  }
+}
+
+export default withRouter(App);
