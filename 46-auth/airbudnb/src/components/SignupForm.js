@@ -1,4 +1,5 @@
 import React from 'react'
+import { API_URL } from '../constants'
 
 class SignUpForm extends React.Component {
   state = {
@@ -18,15 +19,25 @@ class SignUpForm extends React.Component {
     if (this.state.password === this.state.password_confirmation) {
 
       // create a user
-      fetch("http://localhost:3000/signup", {
+      fetch(API_URL + "/signup", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
+        credentials: "include",
         body: JSON.stringify(this.state)
       })
-        .then(r => r.json())
-        .then(user => this.props.handleUpdateCurrentUser(user))
+        .then(r => {
+          if (!r.ok) {
+            throw r
+          }
+          return r.json()
+        })
+        .then(user => {
+          this.props.history.push("/listings")
+          this.props.handleUpdateCurrentUser(user)
+        })
+        .catch(console.error)
 
     } else {
       alert("passwords don't match")

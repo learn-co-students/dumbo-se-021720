@@ -5,6 +5,8 @@ import FilterBar from './FilterBar'
 import Pager from './Pager'
 import LoadingSpinner from './LoadingSpinner'
 
+import { API_URL } from '../constants'
+
 class ListingsContainer extends React.Component {
 
   // initial state
@@ -29,7 +31,7 @@ class ListingsContainer extends React.Component {
 
   fetchListings() {
     const city = this.props.match.params.city || ""
-    fetch(`http://localhost:3000/listings/search?city=${city}`)
+    fetch(API_URL + `/listings/search?city=${city}`)
       .then(r => r.json())
       .then(listings => {
         this.setState({

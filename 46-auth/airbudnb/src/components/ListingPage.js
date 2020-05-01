@@ -2,6 +2,7 @@ import React from 'react'
 import LoadingSpinner from './LoadingSpinner'
 import ReviewForm from './ReviewForm'
 import Review from './Review'
+import { API_URL } from '../constants'
 
 class ListingPage extends React.Component {
 
@@ -11,7 +12,7 @@ class ListingPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(`http://localhost:3000/listings/${this.props.match.params.id}`)
+    fetch(API_URL + `/listings/${this.props.match.params.id}`)
       .then(r => r.json())
       .then(listing => {
         this.setState({

@@ -1,4 +1,5 @@
 import React from 'react'
+import { API_URL } from '../constants'
 
 const initialState = {
   comment: "",
@@ -18,7 +19,7 @@ class ReviewForm extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
 
-    fetch(`http://localhost:3000/listings/${this.props.listingId}/reviews`, {
+    fetch(API_URL + `/listings/${this.props.listingId}/reviews`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"

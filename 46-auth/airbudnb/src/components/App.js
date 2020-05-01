@@ -5,6 +5,7 @@ import ListingsContainer from './ListingsContainer';
 import ListingPage from './ListingPage';
 import LoginForm from './LoginForm';
 import SignupForm from './SignupForm';
+import { API_URL } from '../constants'
 
 class App extends React.Component {
   state = {
@@ -12,11 +13,17 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("http://localhost:3000/autologin", {
+    fetch(API_URL + "/autologin", {
       credentials: "include"
     })
-      .then(r => r.json())
+      .then(r => {
+        if (!r.ok) {
+          throw r
+        }
+        return r.json()
+      })
       .then(user => this.setState({ currentUser: user }))
+      .catch(console.error)
   }
 
   handleUpdateCurrentUser = user => {

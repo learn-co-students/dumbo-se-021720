@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { API_URL } from '../constants'
 
 class NavBar extends React.Component {
   state = {
@@ -7,7 +8,7 @@ class NavBar extends React.Component {
   }
 
   handleLogout = () => {
-    fetch("http://localhost:3000/logout", {
+    fetch(API_URL + "/logout", {
       method: "POST",
       credentials: "include"
     })
@@ -38,10 +39,7 @@ class NavBar extends React.Component {
         </form>
         <div className="actions">
           {this.props.currentUser ? (
-            <>
-              <h4>{this.props.currentUser.username}</h4>
-              <button onClick={this.handleLogout}>Logout</button>
-            </>
+            <button onClick={this.handleLogout}>Logout {this.props.currentUser.username}</button>
           ) : (
               <>
                 <Link to="/login">

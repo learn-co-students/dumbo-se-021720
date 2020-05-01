@@ -1,4 +1,5 @@
 import React from 'react'
+import { API_URL } from '../constants'
 
 class LoginForm extends React.Component {
   state = {
@@ -15,7 +16,7 @@ class LoginForm extends React.Component {
   handleSubmit = event => {
     event.preventDefault()
     // create a user
-    fetch("http://localhost:3000/login", {
+    fetch(API_URL + "/login", {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -24,23 +25,17 @@ class LoginForm extends React.Component {
       body: JSON.stringify(this.state)
     })
       .then(r => {
-        return r.json()
-        // if (r.ok) {
-        //   return r.json()
-        // } else {
-        //   throw r
-        // }
-      })
-      .then(responseData => {
-        if (responseData.error) {
-          console.error(responseData)
-        } else {
-          // this is our redirect
-          this.props.history.push("/listings")
-          this.props.handleUpdateCurrentUser(responseData)
+        if (!r.ok) {
+          throw r
         }
+        return r.json()
       })
-    // .catch(err => console.error(err))
+      .then(user => {
+        // this is our redirect
+        this.props.history.push("/listings")
+        this.props.handleUpdateCurrentUser(user)
+      })
+      .catch(console.error)
 
   }
 
