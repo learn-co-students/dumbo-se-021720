@@ -1,12 +1,13 @@
 class ListingsController < ApplicationController
+  before_action :authenticated
 
   def index
-    listings = Listing.with_average.order(:id)
+    listings = Listing.with_review_and_favorite(@current_user).order(:id)
     render json: listings
   end
 
   def search
-    listings = Listing.with_average.where("city LIKE ?", "%#{params[:city]}%").order(:id)
+    listings = Listing.with_review_and_favorite(@current_user).where("city LIKE ?", "%#{params[:city]}%").order(:id)
     render json: listings
   end
 

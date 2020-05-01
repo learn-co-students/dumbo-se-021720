@@ -1,21 +1,30 @@
 import React from 'react'
+import { API_URL } from '../constants'
 
 class ListingCard extends React.Component {
 
-  state = {
-    favorite: false
-  }
-
   toggleFavorite = event => {
     event.stopPropagation()
-    this.setState(prevState => ({
-      favorite: !prevState.favorite
-    }))
+
+    if (!this.props.listing.favorite) {
+      fetch(API_URL + `/listings/${this.props.listing.id}/favorites`, {
+        method: "POST",
+        credentials: "include"
+      })
+        .then(r => r.json())
+        .then(listing => this.props.handleUpdateListing(listing))
+    } else {
+      fetch(API_URL + `/listings/${this.props.listing.id}/favorites/remove`, {
+        method: "DELETE",
+        credentials: "include"
+      })
+        .then(r => r.json())
+        .then(listing => this.props.handleUpdateListing(listing))
+    }
   }
 
   render() {
-    const { id, image, name, city, price, rating } = this.props.listing
-    const { favorite } = this.state
+    const { id, image, name, city, price, rating, favorite } = this.props.listing
 
     return (
       <div className="card" onClick={() => this.props.showDetail(id)}>

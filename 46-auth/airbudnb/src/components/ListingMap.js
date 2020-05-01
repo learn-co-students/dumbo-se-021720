@@ -2,7 +2,7 @@ import React from 'react'
 import { Map, Marker, Popup, TileLayer } from 'react-leaflet'
 import ListingCard from './ListingCard'
 
-const ListingMap = ({ listings, showDetail }) => {
+const ListingMap = ({ listings, showDetail, handleUpdateListing }) => {
   const firstListing = listings[0]
   return (
     <div className="map">
@@ -14,7 +14,7 @@ const ListingMap = ({ listings, showDetail }) => {
         {listings.map(listing => (
           <Marker key={listing.id} position={[listing.latitude, listing.longitude]}>
             <Popup>
-              <ListingCard listing={listing} showDetail={showDetail} />
+              <ListingCard listing={listing} showDetail={showDetail} handleUpdateListing={handleUpdateListing} />
             </Popup>
           </Marker>
         ))}

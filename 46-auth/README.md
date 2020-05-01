@@ -3,14 +3,62 @@
 ## Goals
 
 ### Authentication
-- [ ] Sign up for an account
-- [ ] Login to an existing account
+- [ ] Sign up for an account (frontend: get a user in state, and save auth cookie)
+
+Frontend:
+- capture user info from a form, send that info to our backend in a request
+- with the response, save the user in state, (and we'll also get their session cookie save in the browser)
+
+Backend:
+- create a new user in the database
+- save the user id in the session (cookie)
+- send the user info and cookie back to the frontend
+
+
+
+- [ ] Login to an existing account 
+Frontend:
+- capture user info from a form, send that info to our backend in a request
+- with the response, save the user in state, (and we'll also get their session cookie save in the browser)
+
+Backend:
+- find a user in the database
+- save the user id in the session (cookie)
+- send the user info and cookie back to the frontend
+
+
 - [ ] Autologin
+Frontend: 
+- send the session cookie to the backend to check if the user has previously logged in
+- with the response, save the user in state
+
+Backend:
+- find a user in the database based on the id saved in the session
+- send the user info back to the frontend
+
+
+
 - [ ] Logout
+Frontend:
+- send a request to clear our session in the backend
+- and also remove the current user from state
+
+Backend:
+- clear the session
+
 
 ### Authorization
 - [ ] Leave a review as a user
-- [ ] What else?
+- [ ] Save user favorites
+
+User -< Favorite >- Listing
+
+
+
+Review
+
+
+
 
 ### If there's time
 - [ ] Localstorage attack demo

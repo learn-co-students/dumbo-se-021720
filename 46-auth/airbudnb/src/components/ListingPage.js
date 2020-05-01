@@ -12,7 +12,9 @@ class ListingPage extends React.Component {
   }
 
   componentDidMount() {
-    fetch(API_URL + `/listings/${this.props.match.params.id}`)
+    fetch(API_URL + `/listings/${this.props.match.params.id}`, {
+      credentials: "include"
+    })
       .then(r => r.json())
       .then(listing => {
         this.setState({
@@ -25,6 +27,26 @@ class ListingPage extends React.Component {
   handleUpdateListing = listing => {
     this.setState({ listing })
   }
+
+  toggleFavorite = () => {
+
+    if (!this.state.listing.favorite) {
+      fetch(API_URL + `/listings/${this.state.listing.id}/favorites`, {
+        method: "POST",
+        credentials: "include"
+      })
+        .then(r => r.json())
+        .then(listing => this.setState({ listing }))
+    } else {
+      fetch(API_URL + `/listings/${this.state.listing.id}/favorites/remove`, {
+        method: "DELETE",
+        credentials: "include"
+      })
+        .then(r => r.json())
+        .then(listing => this.setState({ listing }))
+    }
+  }
+
 
   render() {
     console.log(this.props)

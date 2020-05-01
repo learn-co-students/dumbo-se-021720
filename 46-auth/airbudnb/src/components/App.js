@@ -51,9 +51,13 @@ class App extends React.Component {
             <Route exact path="/" render={() => <h1>Home</h1>} />
             <Route path="/login" render={routeProps => <LoginForm {...routeProps} handleUpdateCurrentUser={this.handleUpdateCurrentUser} />} />
             <Route path="/signup" render={routeProps => <SignupForm {...routeProps} handleUpdateCurrentUser={this.handleUpdateCurrentUser} />} />
-            <Route path="/listings/search/:city" render={routeProps => <ListingsContainer {...routeProps} />} />
-            <Route path="/listings/:id" render={routeProps => <ListingPage {...routeProps} />} />
-            <Route exact path="/listings" render={routeProps => <ListingsContainer {...routeProps} />} />
+            {this.state.currentUser && (
+              <>
+                <Route path="/listings/search/:city" render={routeProps => <ListingsContainer {...routeProps} />} />
+                <Route path="/listings/:id" render={routeProps => <ListingPage {...routeProps} />} />
+                <Route exact path="/listings" render={routeProps => <ListingsContainer {...routeProps} />} />
+              </>
+            )}
           </Switch>
         </main>
       </>

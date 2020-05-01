@@ -1,4 +1,5 @@
 class AuthController < ApplicationController
+  before_action :authenticated, only: [:autologin]
 
   def login
     user = User.find_by(username: params[:username])
@@ -11,12 +12,7 @@ class AuthController < ApplicationController
   end
 
   def autologin
-    user = User.find_by(id: session[:user_id])
-    if user
-      render json: user
-    else
-      render json: { message: "Please login or sign up" }, status: :unauthorized
-    end 
+    render json: @current_user
   end
 
   def logout

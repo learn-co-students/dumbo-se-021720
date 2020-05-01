@@ -10,14 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_01_114310) do
+ActiveRecord::Schema.define(version: 2020_05_01_183212) do
+
+  create_table "favorites", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "listing_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["listing_id"], name: "index_favorites_on_listing_id"
+    t.index ["user_id"], name: "index_favorites_on_user_id"
+  end
 
   create_table "listings", force: :cascade do |t|
     t.string "image"
     t.string "name"
     t.string "city"
     t.integer "price"
-    t.boolean "favorite"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.decimal "latitude", precision: 10, scale: 6
@@ -42,6 +50,8 @@ ActiveRecord::Schema.define(version: 2020_05_01_114310) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "favorites", "listings"
+  add_foreign_key "favorites", "users"
   add_foreign_key "reviews", "listings"
   add_foreign_key "reviews", "users"
 end

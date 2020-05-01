@@ -31,7 +31,9 @@ class ListingsContainer extends React.Component {
 
   fetchListings() {
     const city = this.props.match.params.city || ""
-    fetch(API_URL + `/listings/search?city=${city}`)
+    fetch(API_URL + `/listings/search?city=${city}`, {
+      credentials: "include"
+    })
       .then(r => r.json())
       .then(listings => {
         this.setState({
@@ -60,6 +62,20 @@ class ListingsContainer extends React.Component {
     this.setState({ startIndex: startIndex })
   }
 
+  handleUpdateListing = updatedListing => {
+    const updatedListings = this.state.listings.map(listing => {
+      if (updatedListing.id === listing.id) {
+        return updatedListing
+      } else {
+        return listing
+      }
+    })
+
+    this.setState({
+      listings: updatedListings
+    })
+  }
+
   showDetail = id => {
     this.props.history.push(`/listings/${id}`)
   }
@@ -79,7 +95,7 @@ class ListingsContainer extends React.Component {
 
   getListingCards(listings) {
     return listings
-      .map(listing => <ListingCard key={listing.id} listing={listing} showDetail={this.showDetail} />)
+      .map(listing => <ListingCard key={listing.id} listing={listing} showDetail={this.showDetail} handleUpdateListing={this.handleUpdateListing} />)
   }
 
   render() {
@@ -103,7 +119,7 @@ class ListingsContainer extends React.Component {
             <div className="details">
               {listingCards}
             </div>
-            <ListingMap listings={pagedListings} showDetail={this.showDetail} />
+            <ListingMap listings={pagedListings} showDetail={this.showDetail} handleUpdateListing={this.handleUpdateListing} />
           </section>
         ) : (
             <section className="listings">
