@@ -1,5 +1,5 @@
 import React from 'react'
-import PokemonPage from './components/PokemonPage'
+import PokemonPage from './components/PokemonPageHook'
 import './App.css'
 
 const App = () => (

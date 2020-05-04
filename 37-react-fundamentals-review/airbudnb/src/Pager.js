@@ -3,16 +3,21 @@ import React from 'react'
 const Pager = props => {
 
   // how many doghouses we're displaying
-  const numPages = Math.ceil(props.dogHouseLength / 15)
-  console.log("numPages:", numPages)
+  const buildPages = () => {
+    const numPages = Math.ceil(props.dogHouseLength / 15)
 
-  const pageSpan = []
-  for (let pageIndex = 0; pageIndex < numPages; pageIndex++) {
-    pageSpan.push(<button
-      key={pageIndex}
-      disabled={props.startIndex === pageIndex * 15}
-      onClick={() => props.handleUpdateIndex(pageIndex * 15)}
-    >{pageIndex + 1}</button>)
+    const pageButtons = []
+    for (let pageIndex = 0; pageIndex < numPages; pageIndex++) {
+      pageButtons.push(
+        <button
+          key={pageIndex}
+          disabled={props.startIndex === pageIndex * 15}
+          onClick={() => props.handleUpdateIndex(pageIndex * 15)}
+        >{pageIndex + 1}</button>
+      )
+    }
+
+    return pageButtons
   }
 
   return (
@@ -21,7 +26,7 @@ const Pager = props => {
         disabled={props.startIndex <= 0}
         onClick={() => props.handleUpdateIndex(props.startIndex - 15)}
       >Prev</button>
-      {pageSpan}
+      {buildPages()}
       <button
         disabled={props.startIndex + 15 >= props.dogHouseLength}
         onClick={() => props.handleUpdateIndex(props.startIndex + 15)}

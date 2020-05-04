@@ -13,10 +13,12 @@ class App extends React.Component {
 
   render() {
     console.log("in App, state:", this.state)
+
+    const { searchTerm } = this.state
     return (
       <>
-        <NavBar searchTerm={this.state.searchTerm} handleUpdateSearch={this.handleUpdateSearch} />
-        <ListingsContainer searchTerm={this.state.searchTerm} />
+        <NavBar searchTerm={searchTerm} handleUpdateSearch={this.handleUpdateSearch} />
+        <ListingsContainer searchTerm={searchTerm} />
       </>
     );
   }

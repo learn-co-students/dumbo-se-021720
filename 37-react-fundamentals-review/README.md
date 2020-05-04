@@ -13,7 +13,7 @@ Keep working on our sample app; add features and learn more React on the way!
 
 ## Features to Build/Update
 - [x] Fetch (onClick)
-- [ ] Favorite a listing
+- [x] Favorite a listing
 - [x] Page numbers
 - [ ] sort
 - [ ] render one show page for a dog house (save for routes)

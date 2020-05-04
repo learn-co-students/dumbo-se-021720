@@ -6,6 +6,7 @@
 - [ ] Understand the syntax of useState() and how it is the equivalent of `state` and `setState`
 - [ ] Understand the syntax of useEffect() and how it can be used in place of lifecycle methods(componentDidMount/componentDidUpdate)
 - [ ] Convert Class Components to Functional Components using Hooks
+- [ ] **Bonus** Create custom hooks
 
 -----
 

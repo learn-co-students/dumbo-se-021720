@@ -11,10 +11,10 @@ class ListingCard extends React.Component {
 
   toggleFavorite = () => {
     // arrow fn
-    const implicit = () => ({ key: "value" })
-    const explicit = () => {
-      return { key: "value" }
-    }
+    // const implicit = () => ({ key: "value" })
+    // const explicit = () => {
+    //   return { key: "value" }
+    // }
 
     // this is best practice if your next state depends on prev state
     this.setState(prevState => ({
