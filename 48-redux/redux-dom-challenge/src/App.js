@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
-
-
+import Comments from "./Comments";
 
 const reducer = (state, action) => {
   console.log(action)
@@ -107,20 +106,15 @@ class App extends React.Component {
 
         <hr />
 
-        <h2>Comments:</h2>
-        {comments.map(comment => <p key={comment}>{comment}</p>)}
-
-        <hr />
-        <h3>Leave a comment</h3>
-
-        <form onSubmit={this.handleFormSubmit}>
-          <input type="text" value={comment} onChange={e => this.dispatch({ type: "UPDATE_COMMENT", payload: e.target.value })} />
-          <button>submit</button>
-        </form>
+        <Comments
+          comment={comment}
+          comments={comments}
+          handleFormSubmit={this.handleFormSubmit}
+          handleUpdateComment={e => this.dispatch({ type: "UPDATE_COMMENT", payload: e.target.value })}
+        />
       </div>
     );
   }
-
 }
 
 export default App;
