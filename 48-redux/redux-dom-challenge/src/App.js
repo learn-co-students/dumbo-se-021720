@@ -1,99 +1,41 @@
 import React from "react";
+import { connect } from 'react-redux'
 import "./App.css";
 import Comments from "./Comments";
 
-const reducer = (state, action) => {
-  console.log(action)
-  switch (action.type) {
-    case "INCREMENT":
-      return {
-        ...state,
-        counter: state.counter + 1
-      }
-    case "DECREMENT":
-      return {
-        ...state,
-        counter: state.counter - 1
-      }
-    case "LIKE_NUMBER":
-      const count = state.likedNumbers[state.counter] ? state.likedNumbers[state.counter] + 1 : 1
-
-      return {
-        ...state,
-        likedNumbers: {
-          ...state.likedNumbers,
-          [state.counter]: count
-        }
-      }
-    case "TOGGLE_PAUSE":
-      return {
-        ...state,
-        paused: !state.paused
-      }
-    case "ADD_COMMENT":
-      return {
-        ...state,
-        comments: [...state.comments, state.comment],
-        comment: ""
-      }
-    case "UPDATE_COMMENT":
-      return {
-        ...state,
-        comment: action.payload
-      }
-    default:
-      return state
-  }
-}
-
 class App extends React.Component {
-  state = {
-    counter: 0,
-    paused: true,
-    likedNumbers: {},
-    comment: "",
-    comments: []
-  }
 
   componentDidMount() {
     setInterval(() => {
-      if (!this.state.paused) {
-        this.dispatch({ type: "INCREMENT" })
+      if (!this.props.paused) {
+        this.props.increment()
       }
     }, 1000)
   }
 
-  // setting state
-  // action: { type: "message", payload: data }
-  dispatch = action => {
-    const nextState = reducer(this.state, action)
-    console.log("nextState", nextState)
-    this.setState(nextState)
-  }
-
-
   handleFormSubmit = e => {
     e.preventDefault()
-    this.dispatch({ type: "ADD_COMMENT" })
+    this.props.addComment()
   }
 
   render() {
-    const { counter, paused, likedNumbers, comment, comments } = this.state
+    console.log("App props", this.props)
+    const { counter, paused, likedNumbers } = this.props
     return (
       <div className="App">
         <h1>Redux DOM Challenge</h1>
         <h1>Counter: {counter}</h1>
 
-        <button onClick={() => this.dispatch({ type: "DECREMENT" })}>
+        <button onClick={() => this.props.decrement()}>
           <span role="img" aria-label="minus">➖</span>
         </button>
-        <button onClick={() => this.dispatch({ type: "INCREMENT" })}>
+        <button onClick={() => this.props.increment()}>
           <span role="img" aria-label="plus">➕</span>
         </button>
-        <button onClick={() => this.dispatch({ type: "LIKE_NUMBER" })}>
+        <button onClick={() => this.props.likeNumber()}>
           <span role="img" aria-label="heart">❤️</span>
         </button>
-        <button onClick={() => this.dispatch({ type: "TOGGLE_PAUSE" })}>
+        <button onClick={() => this.props.togglePause()}>
           <span role="img" aria-label={paused ? "play" : "pause"}>
             {paused ? "▶️" : "⏸"}
           </span>
@@ -106,15 +48,33 @@ class App extends React.Component {
 
         <hr />
 
-        <Comments
-          comment={comment}
-          comments={comments}
-          handleFormSubmit={this.handleFormSubmit}
-          handleUpdateComment={e => this.dispatch({ type: "UPDATE_COMMENT", payload: e.target.value })}
-        />
+        <Comments />
       </div>
     );
   }
 }
 
-export default App;
+// mapStateToProps = returns whatever props we want added to our component
+const mapStateToProps = state => {
+  console.log("mSP", state)
+  return {
+    counter: state.counter,
+    paused: state.paused,
+    likedNumbers: state.likedNumbers,
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    someFunc: () => dispatch({ type: "WHATEVER" }),
+    updateComment: (text) => dispatch({ type: "UPDATE_COMMENT", payload: text }),
+    togglePause: () => dispatch({ type: "TOGGLE_PAUSE" }),
+    increment: () => dispatch({ type: "INCREMENT" }),
+    decrement: () => dispatch({ type: "DECREMENT" }),
+    addComment: () => dispatch({ type: "ADD_COMMENT" }),
+    likeNumber: () => dispatch({ type: "LIKE_NUMBER" }),
+  }
+}
+
+// HOC - Higher Order Component
+export default connect(mapStateToProps, mapDispatchToProps)(App);

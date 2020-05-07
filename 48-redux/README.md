@@ -15,20 +15,20 @@ Redux
 - [x] Read `state` in the `store`.
 
 ### Part 2: React Redux
-- [ ] Install the `react-redux` library so it can be used in a project.
-- [ ] Make the `store` available to their application by using the `Provider` component.
-- [ ] Use `connect` to give components the ability to listen for changes to the `store`.
-- [ ] Use `dispatch` in a React component.
-- [ ] Use `mapStateToProps` to read data from the `state` in the Redux `store`.
-- [ ] Use `mapDispatchToProps`
-- [ ] *Bonus* Use action creators & object form of `mapDispatchToProps`
-- [ ] *Bonus* React-Redux hooks: `useSelector` and `useDispatch`
+- [x] Install the `react-redux` library so it can be used in a project.
+- [x] Make the `store` available to their application by using the `Provider` component.
+- [x] Use `connect` to give components the ability to listen for changes to the `store`.
+- [x] Use `dispatch` in a React component.
+- [x] Use `mapStateToProps` to read data from the `state` in the Redux `store`.
+- [x] Use `mapDispatchToProps`
+- [x] *Bonus* React-Redux hooks: `useSelector` and `useDispatch`
 
 ### Part 3: Advanced Redux
 - [ ] Install the `redux-thunk` library
 - [ ] Use `applyMiddleware` from the redux library and `thunkMiddleware` from the redux-thunk library
 - [ ] Create action creators that return functions in order to dispatch asynchronously
 - [ ] Discuss best practices of action architecture when using thunk
+- [ ] *Bonus* Use action creators & object form of `mapDispatchToProps`
 
 
 ![React State vs. Redux](https://css-tricks.com/wp-content/uploads/2016/03/redux-article-3-03.svg)
