@@ -27,9 +27,9 @@ const PokemonMap = () => {
 
   const { position, pokemons, icon } = useSelector(state => {
     return {
-      position: state.position,
-      pokemons: state.pokemons,
-      icon: state.weather.icon
+      position: state.user.position,
+      pokemons: state.pokemon.pokemons,
+      icon: state.user.weather.icon
     }
   })
 

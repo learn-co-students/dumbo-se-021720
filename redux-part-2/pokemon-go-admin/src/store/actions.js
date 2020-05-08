@@ -1,10 +1,11 @@
 import { getWeather } from '../api/weather'
 import { getRandomPokemon } from '../api/pokemon'
+import * as types from './types'
 
 // action creators
 // function that returns an action { type: "", payload: data }
 export function setPosition(position) {
-  return { type: "SET_POSITION", payload: position }
+  return { type: types.SET_POSITION, payload: position }
 }
 
 export function setWeather(weather) {

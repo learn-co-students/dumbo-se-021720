@@ -20,8 +20,8 @@ const Header = ({ weather, position, fetchWeather }) => {
 const mapStateToProps = state => {
 
   return {
-    weather: state.weather,
-    position: state.position
+    weather: state.user.weather,
+    position: state.user.position
   }
 }
 

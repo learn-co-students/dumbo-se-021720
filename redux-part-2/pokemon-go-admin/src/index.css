@@ -29,6 +29,15 @@ h1, h2, h3, h4, h5, h6 {
   font-family: 'Press Start 2P', cursive;
 }
 
+button.finder {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 2rem;
+  background-color: #EF534F;
+  border: 3px solid black;
+  padding: 1rem;
+  margin: 40vh 40vw;
+}
+
 /* weather themes */
 .App.☁️ {
   --main-bg-color: rgb(216, 238, 244);

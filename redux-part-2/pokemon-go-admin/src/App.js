@@ -9,8 +9,8 @@ import { setPosition, fetchWeather } from './store/actions'
 
 function App() {
 
-  const weather = useSelector(state => state.weather)
-  const position = useSelector(state => state.position)
+  const weather = useSelector(state => state.user.weather)
+  const position = useSelector(state => state.user.position)
 
 
   // useDispatch returns a dispatch function 
@@ -24,7 +24,6 @@ function App() {
     }, err => console.error("geolocation error", err))
   }, [dispatch])
 
-
   // get the weather for that location
   useEffect(() => {
     if (position.length) {
@@ -32,14 +31,22 @@ function App() {
     }
   }, [position, dispatch])
 
+  // const getLocation = () => {
+  //   navigator.geolocation.getCurrentPosition(({ coords }) => {
+  //     dispatch(setPosition([coords.latitude, coords.longitude]))
+  //   }, err => console.error("geolocation error", err))
+  // }
+  // if (!position.length) {
+  //   return <button className="finder" onClick={getLocation}>Find Me</button>
+  // }
 
   // loading screen
-  if (!position.length || !weather) {
+  if (!weather || !position.length) {
     return <h1>Loading...</h1>
   }
 
   return (
-    <div className={`App ${weather.icon}`}>
+    <div className={`App ${weather && weather.icon}`}>
       <Header />
       <main>
         <PokemonList />
