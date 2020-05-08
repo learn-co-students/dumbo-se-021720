@@ -68,16 +68,38 @@ For larger applications, it might make sense to have multiple reducers handling 
 import { createStore, applyMiddleware, combineReducers } from 'redux'
 import thunk from 'redux-thunk';
 import pokemonReducer from './pokemonReducer'
-import weatherReducer from './weatherReducer'
+import environmentReducer from './environmentReducer'
 
 const reducer = combineReducers({
-  weather: weatherReducer,
+  environment: environmentReducer,
   pokemon: pokemonReducer
 })
 
 const store = createStore(reducer, applyMiddleware(thunk))
 
 export default store
+```
+
+## Advanced - Redux DevTools
+
+Redux DevTools is a [Chrome extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en) for debugging the Redux store.
+
+From the docs - To make things easier, there's an npm package to install:
+
+```sh
+npm install redux-devtools-extension
+```
+
+Use like so:
+
+```js
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+
+const store = createStore(reducer, composeWithDevTools(
+  applyMiddleware(...middleware),
+  // other store enhancers if any
+));
 ```
 
 ## Example Folder Structure
