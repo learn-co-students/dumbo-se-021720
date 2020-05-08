@@ -28,6 +28,7 @@ Redux
 - [ ] Use `applyMiddleware` from the redux library and `thunkMiddleware` from the redux-thunk library
 - [ ] Create action creators that return functions in order to dispatch asynchronously
 - [ ] Discuss best practices of action architecture when using thunk
+- [ ] *Bonus* Connect the Redux Devtools
 - [ ] *Bonus* Use action creators & object form of `mapDispatchToProps`
 
 
