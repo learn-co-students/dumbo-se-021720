@@ -1,7 +1,10 @@
 export const getRandomPokemon = () => {
-  const id = Math.floor(Math.random() * 964) + 1
+  const id = Math.floor(Math.random() * 807) + 1
   return fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw r
+      return r.json()
+    })
     .then(pokemon => {
       return {
         name: pokemon.name,
@@ -9,5 +12,4 @@ export const getRandomPokemon = () => {
         stats: pokemon.stats
       }
     })
-    .catch(err => console.error("Pokemon fetch error", err))
 }

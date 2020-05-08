@@ -1,8 +1,14 @@
 export const getWeather = (lat, lng) => {
   return fetch(`https://api.weather.gov/points/${lat},${lng}`)
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw r
+      return r.json()
+    })
     .then(data => fetch(data.properties.forecast))
-    .then(r => r.json())
+    .then(r => {
+      if (!r.ok) throw r
+      return r.json()
+    })
     .then(data => {
       return formatForecast(data.properties.periods[0])
     })

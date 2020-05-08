@@ -1,7 +1,8 @@
 import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import { Map, TileLayer } from 'react-leaflet'
-import { getRandomPokemon } from '../api/pokemon'
 import PokemonMarker from './PokemonMarker'
+import { fetchPokemon } from '../store/actions'
 
 const maps = {
   "☀️": {
@@ -22,16 +23,22 @@ const maps = {
   },
 }
 
-const PokemonMap = ({ position, pokemons, icon = "☀️" }) => {
+const PokemonMap = () => {
+
+  const { position, pokemons, icon } = useSelector(state => {
+    return {
+      position: state.position,
+      pokemons: state.pokemons,
+      icon: state.weather.icon
+    }
+  })
+
+  const dispatch = useDispatch()
 
   const map = maps[icon] ? maps[icon] : maps["☀️"]
 
   const handleMapClick = ({ latlng: { lat, lng } }) => {
-    getRandomPokemon()
-      .then(pokemon => {
-        const pokemonWithPosition = { ...pokemon, position: [lat, lng] }
-        console.log(pokemonWithPosition)
-      })
+    dispatch(fetchPokemon(lat, lng))
   }
 
   return (
