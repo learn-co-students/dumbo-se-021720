@@ -35,7 +35,7 @@ const TweetList = ({ user, currentUser }) => {
 
   const updateTweets = () => {
     setTweets(tweets => ({
-      feed: [...tweets.new, ...tweets.feed],
+      feed: [...tweets.newTweets, ...tweets.feed],
       newTweets: []
     }))
   }
