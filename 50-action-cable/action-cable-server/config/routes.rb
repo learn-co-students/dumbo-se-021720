@@ -4,4 +4,6 @@ Rails.application.routes.draw do
     resources :tweets, only: [:index, :create]
   end
 
+  mount ActionCable.server => "/cable"
+
 end

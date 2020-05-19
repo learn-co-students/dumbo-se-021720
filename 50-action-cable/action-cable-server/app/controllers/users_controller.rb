@@ -5,6 +5,7 @@ class UsersController < ApplicationController
     render json: users
   end
 
+  # login
   def show
     user = User.find_by(id: params[:id])
     session[:user_id] = user.id

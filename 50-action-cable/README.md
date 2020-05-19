@@ -6,6 +6,14 @@
 - [ ] Manage Action Cable subscriptions and broadcast messages
 - [ ] Connect to Action Cable from a React application
 
+
+- live notifications
+- messaging/chat/ims
+
+- how to do auth (with cookies)
+- how to subscribe to general notifications (not a specific feed)
+
+
 ## Action Cable in Rails
 
 Rails has support for WebSockets via Action Cable. Action Cable is included with Rails, so you don't need to install any additional gems to get up and running. 
@@ -16,7 +24,7 @@ To allow connections to web socket server, update your `routes.rb` file to inclu
 # config/routes.rb
 Rails.application.routes.draw do
   # will create a route at ws://localhost:3000/cable
-  mount Action Cable.server => "/cable"
+  mount ActionCable.server => "/cable"
 end
 ```
 
